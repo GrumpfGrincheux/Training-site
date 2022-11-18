@@ -1,0 +1,135 @@
+<html>
+    <body>
+        <head>
+            <link rel="stylesheet" href="flexstyle.css"/>
+            <script src="javascript.js" defer></script>
+            <noscript>Pour utiliser ce site, merci d'activer JavaScript.</noscript>
+            <div id="font-links">
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+            </div>
+        </head>
+        <title>Flexbox Showcase</title>
+        <header class="navigation">
+            <label for="dropdown">
+                <svg viewBox="0 0 32 32" fill="#C0C0C0">
+                    <rect x="0" y="4" rx="3" ry="3" width="32" height="3" />
+                    <rect x="0" y="14" rx="3" ry="3" width="32" height="3" />
+                    <rect x="0" y="24" rx="3" ry="3" width="32" height="3" />
+                </svg>
+            </label>
+            <input type="checkbox" id="dropdown">
+            <nav id="dropdown-menu">
+                <a href="indexmobile.html"><svg id="home" viewBox="0 0 16 16" fill="#C0C0C0" >
+                    <path d="M15.45,7L14,5.551V2c0-0.55-0.45-1-1-1h-1c-0.55,0-1,0.45-1,1v0.553L9,0.555C8.727,0.297,8.477,0,8,0S7.273,0.297,7,0.555
+                        L0.55,7C0.238,7.325,0,7.562,0,8c0,0.563,0.432,1,1,1h1v6c0,0.55,0.45,1,1,1h3v-5c0-0.55,0.45-1,1-1h2c0.55,0,1,0.45,1,1v5h3  
+                        c0.55,0,1-0.45,1-1V9h1c0.568,0,1-0.437,1-1C16,7.562,15.762,7.325,15.45,7z"/>
+                </svg></a>
+                <ul>
+                    <li>
+                        <p><a href="playground.html">Playground</a></p>
+                    </li>
+                    <li>
+                        <p><a href="flexshowcase.html">Flexbox Showcase</a></p>
+                    </li>
+                </ul>
+            </nav>    
+        </header>
+
+        <div id="screen-size-counter">
+            <p>Page size in pixels :</p>
+            <p>Width : <span id="width-counter"></span></p>
+            <p>Height : <span id="height-counter"></span></p>
+        </div>
+        
+        <header class="title">
+            <h1>Flexbox properties showcase</h1>
+        </header>
+          
+        <main>
+        
+        <section class="explication">
+            <article>
+            <h4>Intro</h4>
+            <p>Here's a div of 510px . 500px of free space + 10px of border. </p>
+            <p>It has the "display: flex;" property which turns it into a flex container.</p>
+            <p>Items inside are turned into flex item. Each of these has different properties</p>
+            <div>
+                <ul>
+                <h4>Default properties</h4>
+                <h4>for flex containers</h4>
+                <li>display: flex;</li>
+                <li>flex-direction: row;</li>
+                <li>justify-content: normal;</li>
+                <li>align-content: normal;</li>
+                <li>align-items: normal;</li>
+                <li>flex-wrap: nowrap;</li>
+                </ul>
+                <div style="border: dashed black 1px"></div>
+                <ul>
+                <h4>Default properties</h4>
+                <h4>for flex items</h4>
+                <li>align-self: auto;</li>
+                <li>flex-grow: 0;</li>
+                <li>flex-shrink: 1;</li>
+                <li>flex-basis: auto;</li>
+                </ul>
+            </article>
+        </section>
+        <section class="demonstration">
+            <div class="flex-cont">
+            <span id="horizontal-axis">Main Axis</span>
+            <span id="vertical-axis">Cross Axis</span>
+            <div class="fi flex-item-1"><p>1</p></div>
+            <div class="fi flex-item-2"><p>2</p></div>
+            <div class="fi flex-item-3"><p>3</p></div>
+            <div class="fi flex-item-4"><p>4</p></div>
+            </div>
+        </section>
+            <section class="explication">
+            <article>
+            <h4>Intro</h4>
+            <p>Here's a div of 510px . 500px of free space + 10px of border. </p>
+            <p>It has the "display: flex;" property which turns it into a flex container.</p>
+            <p>Items inside are turned into flex item. Each of these has different properties</p>
+            <div>
+                <ul>
+                <h4>Default properties</h4>
+                <h4>for flex containers</h4>
+                <li>display: flex;</li>
+                <li>flex-direction: row;</li>
+                <li>justify-content: normal;</li>
+                <li>align-content: normal;</li>
+                <li>align-items: normal;</li>
+                <li>flex-wrap: nowrap;</li>
+                </ul>
+                <div style="border: dashed black 1px"></div>
+                <ul>
+                <h4>Default properties</h4>
+                <h4>for flex items</h4>
+                <li>align-self: auto;</li>
+                <li>flex-grow: 0;</li>
+                <li>flex-shrink: 1;</li>
+                <li>flex-basis: auto;</li>
+                </ul>
+            </article>
+        </section>
+        <section class="demonstration">
+            <div class="flex-cont">
+            <span id="horizontal-axis">Main Axis</span>
+            <span id="vertical-axis">Cross Axis</span>
+            <div class="fi flex-item-1"><p>1</p></div>
+            <div class="fi flex-item-2"><p>2</p></div>
+            <div class="fi flex-item-3"><p>3</p></div>
+            <div class="fi flex-item-4"><p>4</p></div>
+            </div>
+        </section>
+                    
+        </main>
+
+        <footer>
+
+        </footer>
+    </body>
+</html>
