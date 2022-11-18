@@ -1,13 +1,15 @@
 <html>
     <body>
         <head>
+            <link href="prism.css" rel="stylesheet" />
             <link rel="stylesheet" href="flexstyle.css"/>
             <script src="javascript.js" defer></script>
+            <script src="prism.js"></script>
             <noscript>Pour utiliser ce site, merci d'activer JavaScript.</noscript>
             <div id="font-links">
                 <link rel="preconnect" href="https://fonts.googleapis.com">
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
             </div>
         </head>
         <title>Flexbox Showcase</title>
@@ -51,30 +53,37 @@
         
         <section class="explication">
             <article>
-            <h4>Intro</h4>
-            <p>Here's a div of 510px . 500px of free space + 10px of border. </p>
-            <p>It has the "display: flex;" property which turns it into a flex container.</p>
-            <p>Items inside are turned into flex item. Each of these has different properties</p>
-            <div>
-                <ul>
-                <h4>Default properties</h4>
-                <h4>for flex containers</h4>
-                <li>display: flex;</li>
-                <li>flex-direction: row;</li>
-                <li>justify-content: normal;</li>
-                <li>align-content: normal;</li>
-                <li>align-items: normal;</li>
-                <li>flex-wrap: nowrap;</li>
-                </ul>
-                <div style="border: dashed black 1px"></div>
-                <ul>
-                <h4>Default properties</h4>
-                <h4>for flex items</h4>
-                <li>align-self: auto;</li>
-                <li>flex-grow: 0;</li>
-                <li>flex-shrink: 1;</li>
-                <li>flex-basis: auto;</li>
-                </ul>
+                <h4>Intro</h4>
+                <p>Here's a div of 510px . 500px of free space + 10px of border. </p>
+                <p>It has the "display: flex;" property which turns it into a flex container.</p>
+                <p>Items inside are turned into flex item. Each of these has different properties.
+                  Here are the default properties of flex-containers and flex-items that are set to 
+                  the container and the contained items when the property <code class="language-css">display: flex;</code>
+                  is applied to the container.
+                </p>
+                <div>
+                    <pre>
+                        <code class="language-css">
+flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content:normal;
+  align-content: normal;
+  align-items: normal;
+  flex-wrap: nowrap;
+}</code>
+                    </pre>
+                    <div style="border: dashed black 1px"></div>
+                    <pre>
+                        <code class="language-css">
+flex-item {
+  align-self: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}</code>
+                    </pre>              
+                </div>
             </article>
         </section>
         <section class="demonstration">
@@ -85,47 +94,7 @@
             <div class="fi flex-item-2"><p>2</p></div>
             <div class="fi flex-item-3"><p>3</p></div>
             <div class="fi flex-item-4"><p>4</p></div>
-            </div>
-        </section>
-            <section class="explication">
-            <article>
-            <h4>Intro</h4>
-            <p>Here's a div of 510px . 500px of free space + 10px of border. </p>
-            <p>It has the "display: flex;" property which turns it into a flex container.</p>
-            <p>Items inside are turned into flex item. Each of these has different properties</p>
-            <div>
-                <ul>
-                <h4>Default properties</h4>
-                <h4>for flex containers</h4>
-                <li>display: flex;</li>
-                <li>flex-direction: row;</li>
-                <li>justify-content: normal;</li>
-                <li>align-content: normal;</li>
-                <li>align-items: normal;</li>
-                <li>flex-wrap: nowrap;</li>
-                </ul>
-                <div style="border: dashed black 1px"></div>
-                <ul>
-                <h4>Default properties</h4>
-                <h4>for flex items</h4>
-                <li>align-self: auto;</li>
-                <li>flex-grow: 0;</li>
-                <li>flex-shrink: 1;</li>
-                <li>flex-basis: auto;</li>
-                </ul>
-            </article>
-        </section>
-        <section class="demonstration">
-            <div class="flex-cont">
-            <span id="horizontal-axis">Main Axis</span>
-            <span id="vertical-axis">Cross Axis</span>
-            <div class="fi flex-item-1"><p>1</p></div>
-            <div class="fi flex-item-2"><p>2</p></div>
-            <div class="fi flex-item-3"><p>3</p></div>
-            <div class="fi flex-item-4"><p>4</p></div>
-            </div>
-        </section>
-                    
+            </div>  
         </main>
 
         <footer>
