@@ -163,6 +163,7 @@ section {
   }
 .explication article div {
   display: flex;
+  transform: scale(0.95)
 }
 .explication article div pre {
   width: 48%;
