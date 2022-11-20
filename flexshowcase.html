@@ -51,15 +51,16 @@
           
         <main>
         
-        <section class="explication">
+        <section class="explication section-1">
             <article>
                 <h4>Intro</h4>
-                <p>Here's a div of 510px . 500px of free space + 10px of border. </p>
-                <p>It has the "display: flex;" property which turns it into a flex container.</p>
-                <p>Items inside are turned into flex item. Each of these has different properties.
-                  Here are the default properties of flex-containers and flex-items that are set to 
-                  the container and the contained items when the property <code class="language-css">display: flex;</code>
-                  is applied to the container.
+                <p>Here's a 510px wide div (500px free space + 10px border) holding 50px wide items. </p>
+                <p>It has the <code class="language-css">display: flex;</code> property which turns it into a flex container. 
+                    Items inside are turned into flex items.</p>
+                <p>Here are the default properties of flex-containers and flex-items that are set to 
+                  the container and the contained items when the
+                  <code class="language-css">display: flex;</code>
+                  property is applied to the container.
                 </p>
                 <div>
                     <pre>
@@ -86,15 +87,50 @@ flex-item {
                 </div>
             </article>
         </section>
-        <section class="demonstration">
+        <section class="demonstration section-1">
             <div class="flex-cont">
-            <span id="horizontal-axis">Main Axis</span>
-            <span id="vertical-axis">Cross Axis</span>
-            <div class="fi flex-item-1"><p>1</p></div>
-            <div class="fi flex-item-2"><p>2</p></div>
-            <div class="fi flex-item-3"><p>3</p></div>
-            <div class="fi flex-item-4"><p>4</p></div>
+                <span class="horizontal-axis">Main Axis</span>
+                <span class="vertical-axis">Cross Axis</span>
+                <div class="fi flex-item-1"><p>1</p></div>
+                <div class="fi flex-item-2"><p>2</p></div>
+                <div class="fi flex-item-3"><p>3</p></div>
+                <div class="fi flex-item-4"><p>4</p></div>
             </div>  
+        </section>
+        <section class="selection section-2">
+            <h4>Actual showcase</h4>
+            <div>
+                <label for="flex-direction-select"><code class="language-css">flex-direction:</code></label>
+                <select onchange="selectFlexDirection()" id="flex-direction-select">
+                    <option value="row">row;</option>
+                    <option value="col">column;</option>
+                    <option value="row-rev">row-reverse;</option>
+                    <option value="col-rev">column-reverse;</option>
+                </select>
+            </div>
+            <div>
+                <label for="justify-content-select"><code class="language-css">justify-content:</code></label>
+                <select onchange="selectJustifyContent()" id="justify-content-select">
+                    <option value="start">start;</option>
+                    <option value="center">center;</option>
+                    <option value="space-between">space-between;</option>
+                    <option value="space-around">space-around;</option>
+                    <option value="space-evenly">space-evenly;</option>
+                </select>
+            </div>
+            <p>lzlzlz</p> 
+        </section>
+        <section class="demonstration section-2">
+            <div class="flex-cont showcase">
+                <span class="horizontal-axis">Main Axis</span>
+                <span class="vertical-axis">Cross Axis</span>
+                <div class="fi flex-item-1"><p>1</p></div>
+                <div class="fi flex-item-2"><p>2</p></div>
+                <div class="fi flex-item-3"><p>3</p></div>
+                <div class="fi flex-item-4"><p>4</p></div>
+            </div>
+        </section>
+
         </main>
 
         <footer>

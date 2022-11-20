@@ -1,4 +1,4 @@
-function hideShowHTML() {
+function hideShowImg() {
     const image = document.getElementById('html-meme');
     if (image.getAttribute("hidden") === null) {
     image.setAttribute("hidden", "je suis une grosse truite")}
@@ -8,7 +8,7 @@ function hideShowHTML() {
 }
 
 function printRandomNum() {
-    let randomNum = Math.floor(Math.random() * 1000);
+    const randomNum = Math.floor(Math.random() * 1000);
     document.getElementById('random-number').textContent = randomNum;
 }
 
@@ -23,40 +23,55 @@ window.onresize = () => {
 }
 
 const hideNav = () => {
-    let input = document.getElementById('dropdown');
+    const input = document.getElementById('dropdown');
     input.checked = false;
     
-    let ghostWindow = document.getElementById('ghost-window');
+    const ghostWindow = document.getElementById('ghost-window');
     ghostWindow.remove();
 }
 
 function displayNav() {
-    let input = document.getElementById('dropdown');
-    let ghostWindow = document.createElement('div');
-    let state = input.checked;
+    const input = document.getElementById('dropdown');
+    const ghostWindow = document.createElement('div');
+    const state = input.checked;
     if (state){
     ghostWindow.className = 'ghost-window';
     ghostWindow.id = 'ghost-window';
     document.body.appendChild(ghostWindow);
     ghostWindow.addEventListener('click', hideNav);
     } else {
-        let ghostWindow = document.getElementById('ghost-window');
+        const ghostWindow = document.getElementById('ghost-window');
         ghostWindow.remove();
     }
 }
 
-let input = document.getElementById('dropdown');
+const input = document.getElementById('dropdown');
 input.addEventListener('click', displayNav);
 input.addEventListener('load', ghostDisplay)
 
 function ghostDisplay() {
-    let input = document.getElementById('dropdown');
-    let ghostWindow = document.createElement('div');
-    let state = input.checked;
+    const input = document.getElementById('dropdown');
+    const ghostWindow = document.createElement('div');
+    const state = input.checked;
     if (state){
         ghostWindow.className = 'ghost-window';
         ghostWindow.id = 'ghost-window';
         document.body.appendChild(ghostWindow);
         ghostWindow.addEventListener('click', hideNav);
     }
+}
+
+const flexContainer = document.querySelector(".showcase");
+const flexDirection = document.querySelector("#flex-direction-select");
+const justifyContent = document.querySelector("#justify-content-select");
+const containerClassList = flexContainer.classList;
+
+function selectFlexDirection() {
+    flexContainer.className = "showcase";
+    containerClassList.add(flexDirection.value);
+}
+
+function selectJustifyContent() {
+    flexContainer.className = "showcase";
+    containerClassList.add(justifyContent.value);
 }
