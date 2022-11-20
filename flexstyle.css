@@ -127,18 +127,22 @@ svg:hover {
   text-shadow: 2px 2px px rgba(0,0,0,0.6);
 }
 
-.title {
-  text-align: center;
-}
+/*               Document                           */
+
 h1 {
   font-size: 3rem;
   font-weight: 800;
   position: absolute;
   top: 100px;
+  width: 100%;
 }
 h4 {
   font-weight: 800;
 }
+.title {
+  text-align: center;
+}
+
 main {
   display: flex;
   position: absolute;
@@ -153,57 +157,63 @@ section {
   border: black solid 5px;
   width: 550px;
   margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  height: 550px;
+  align-items: center;
 }
-.explication article {
-  margin-left: 3%;
-  margin-right: 3%;
-}
+
 .explication article p {
-  margin: 1px;
-  }
+  padding: 1px;
+  margin: 0;
+}
 .explication article div {
   display: flex;
 }
-.explication article div pre {
+.explication article div pre .language-css {
+  font-size: 0.90rem;
+}
+#section-1 .explication article div pre {
   width: 48%;
   justify-content: space-evenly;
 }
-
-.demonstration {
-  align-items: center;
-}
-.flex-cont {
-  height: 300px;
+.flex-cont, .showcase{
+  height: 350px;
   width: 510px;
   border: solid black 5px;
-  position: relative;
   top: 25px;
   left: 25px;
   display: flex;
+  position: relative;
   margin-right: 30px;
-  margin-bottom: 30px;;
+  margin-bottom: 30px;
+}
+.selection {
+  flex-direction: column;
 }
 
 .fi {
   background-color : #017679;
   text-align: center;
-  width: 50px;
   border: beige solid 1px;
+  display: flex;
+  width: 50px;
+  align-items: center;
+  justify-content: center;
+  align-self: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
 }
-
 .fi p {
-  position: relative;
-  top: 40%;
   color: beige;
 }
-
-#horizontal-axis {
+.horizontal-axis {
   position: absolute;
   top: -30px;
   font-weight: 900;
 }
-
-#vertical-axis {
+.vertical-axis {
   position: absolute;
   left: -60px;
   top: 30px;
@@ -211,3 +221,48 @@ section {
   transform-origin: bottom-right;
   transform: rotate(-90deg);
 }
+
+.row {
+  flex-direction: row;
+}
+.col {
+  flex-direction: column;
+}
+.col-rev {
+  flex-direction: column-reverse;
+}
+.row-rev {
+  flex-direction: row-reverse;
+}
+
+.start {
+  justify-content: start;
+}
+.center {
+  justify-content: center; 
+}
+.space-evenly{
+  justify-content: space-evenly;
+}
+.space-between {
+  justify-content:space-between
+}
+.space-around {
+  justify-content: space-around;
+}
+/*
+flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content:normal;
+  align-content: normal;
+  align-items: normal;
+  flex-wrap: nowrap;
+}
+flex-item {
+  align-self: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+*/
