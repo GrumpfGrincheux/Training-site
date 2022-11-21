@@ -418,3 +418,9 @@ section {
     padding-right: 5%;
   }
 }
+@media screen and (min-width: 1800px) {
+  main {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
