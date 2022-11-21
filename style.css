@@ -5,7 +5,6 @@ html {
   font-weight: 600;
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   color: inherit;
   font-family: inherit;
@@ -64,10 +63,6 @@ body {
   -webkit-box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
   -moz-box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
 }
-#home svg {
-  height: 100px;
-  width: 100px;
-}
 #dropdown-menu ul {
   padding: 0px;
 }
@@ -90,6 +85,10 @@ svg {
   -webkit-box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
   -moz-box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
   z-index: 10;
+}
+svg:hover {
+  background-color: rgb(71, 71, 71);
+  cursor: pointer;
 }
 
 /*              Compteur de pixels               */
@@ -141,9 +140,9 @@ main {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-/* #random-number-container p, #random-number-container span {
-
-} */
+#random-number-container span {
+  margin-left: 10px;
+}
 #random-number-container button {
   background-color: #5e5e5e;
   border: #d6d6d6 outset 4px;
@@ -152,6 +151,11 @@ main {
   z-index: 5;
   margin-left: auto;
   margin-right: auto;
+}
+#random-number-container button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 footer {
@@ -169,21 +173,3 @@ footer p {
   margin: 0px;
   padding: 2px;
 }
-
-/* FLEX RULES */
-/*
-flex-container {
-  display: flex;
-  flex-direction: row;
-  justify-content:normal;
-  align-content: normal;
-  align-items: normal;
-  flex-wrap: nowrap;
-}
-
-flex-item {
-  align-self: auto;
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-*/
