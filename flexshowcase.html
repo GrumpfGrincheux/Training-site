@@ -109,15 +109,16 @@ flex-item {
             <p>Use the selectors to change properties.</p>
             <div class="flex-container-options">
                 <h4><code class="language-css">flex-container {</code></h4>
-                <div><label for="flex-direction-select"><code class="language-css">flex-direction:</code></label>
+                <div><label for="flex-direction-select"><code class="language-css param">flex-direction:</code></label>
                 <select onchange="selectOptions()" id="flex-direction-select">
                     <option value="row">row;</option>
                     <option value="col">column;</option>
                     <option value="row-rev">row-reverse;</option>
                     <option value="col-rev">column-reverse;</option>
                 </select></div>
-                <div><label for="justify-content-select"><code class="language-css">justify-content:</code></label>
+                <div><label for="justify-content-select"><code class="language-css param">justify-content:</code></label>
                 <select onchange="selectOptions()" id="justify-content-select">
+                    <option value="normal">normal;</option>
                     <option value="start">start;</option>
                     <option value="end">end;</option>
                     <option value="flex-start">flex-start;</option>
@@ -130,8 +131,9 @@ flex-item {
                     <option value="left">left;</option>
                     <option value="right">right;</option>
                 </select></div>
-                <div><label for="align-content-select"><code class="language-css">align-content:</code></label>
+                <div><label for="align-content-select"><code class="language-css param">align-content:</code></label>
                 <select onchange="selectOptions()" id="align-content-select">
+                    <option value="normal">normal;</option>
                     <option value="center">center;</option>
                     <option value="flex-start">flex-start;</option>
                     <option value="flex-end">flex-end;</option>
@@ -139,15 +141,16 @@ flex-item {
                     <option value="space-between">space-between;</option>
                     <option value="stretch">stretch;</option>
                 </select></div>
-                <div><label for="align-items-select"><code class="language-css">align-items:</code></label>
+                <div><label for="align-items-select"><code class="language-css param">align-items:</code></label>
                 <select onchange="selectOptions()" id="align-items-select">
+                    <option value="normal">normal;</option>
                     <option value="stretch">stretch;</option>
                     <option value="center">center;</option>
                     <option value="start">flex-start;</option>
                     <option value="end">flex-end;</option>
                     <option value="baseline">baseline;</option>
                 </select></div>
-                <div><label for="flex-wrap-select"><code class="language-css">flex-wrap:</code></label>
+                <div><label for="flex-wrap-select"><code class="language-css param">flex-wrap:</code></label>
                 <select onchange="selectOptions()" id="flex-wrap-select">
                     <option value="nowrap">nowrap;</option>
                     <option value="wrap">wrap;</option>
@@ -156,8 +159,14 @@ flex-item {
                 <h4><code class="language-css">}</code></h4>
             </div>
             <div class="flex-items-options">
-                <h4><code class="language-css">flex-item {</code> (item n° 2)</h4>
-                <div><label for="align-self-select"><code class="language-css">align-self:</code></label>
+                <h4><code class="language-css">flex-item {</code>
+                    <select onchange="reinitValues(this.value); selectOptions()" id="item-select">
+                        <option value="1">item n°1</option>
+                        <option value="2">item n°2</option>
+                        <option value="3">item n°3</option>
+                        <option value="4">item n°4</option>
+                    </select></h4>
+                <div><label for="align-self-select"><code class="language-css param">align-self:</code></label>
                 <select onchange="selectOptions()" id="align-self-select">
                     <option value="auto">auto;</option>
                     <option value="stretch">stretch;</option>
@@ -166,7 +175,7 @@ flex-item {
                     <option value="flex-end">flex-end;</option>
                     <option value="center">center;</option>
                 </select></div>
-                <div><label for="flex-grow-select"><code class="language-css">flex-grow:</code></label>
+                <div><label for="flex-grow-select"><code class="language-css param">flex-grow:</code></label>
                 <select onchange="selectOptions()" id="flex-grow-select">
                     <option value="0">0;</option>
                     <option value="1">1;</option>
@@ -175,7 +184,7 @@ flex-item {
                     <option value="4">4;</option>
                     <option value="5">5;</option>
                 </select></div>
-                <div><label for="flex-shrink-select"><code class="language-css">flex-shrink:</code></label>
+                <div><label for="flex-shrink-select"><code class="language-css param">flex-shrink:</code></label>
                 <select onchange="selectOptions()" id="flex-shrink-select">
                     <option value="0">0;</option>
                     <option value="1">1;</option>
@@ -184,8 +193,9 @@ flex-item {
                     <option value="4">4;</option>
                     <option value="5">5;</option>
                 </select></div>
-                <div><label for="flex-basis-select"><code class="language-css">flex-basis:</code></label>
+                <div><label for="flex-basis-select"><code class="language-css param">flex-basis:</code></label>
                 <select onchange="selectOptions()" id="flex-basis-select">
+                    <option value="auto">auto;</option>
                     <option value="50px">50px;</option>
                     <option value="100px">100px;<px/option>
                     <option value="150px">150px;</option>
@@ -196,7 +206,14 @@ flex-item {
             </div>
         </section>
         <section class="demonstration section-2">
-            <div class="flex-cont showcase"><span class="horizontal-axis">Main Axis</span><span class="vertical-axis">Cross Axis</span><div class="fi fi-1"><p>1</p></div><div class="fi fi-2"><p>2</p></div><div class="fi fi-3"><p>3</p></div><div class="fi fi-4"><p>4</p></div></div>
+            <div class="flex-cont showcase">
+                <span class="horizontal-axis">Main Axis</span>
+                <span class="vertical-axis">Cross Axis</span>
+                <div class="fi fi-1"><p>1</p></div>
+                <div class="fi fi-2"><p>2</p></div>
+                <div class="fi fi-3"><p>3</p></div>
+                <div class="fi fi-4"><p>4</p></div>
+            </div>
         </section>
 
         </main>

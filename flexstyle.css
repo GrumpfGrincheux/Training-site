@@ -1,9 +1,11 @@
 html {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
+}
+body {
+  padding: 0;
   font-size: 1.04rem;
 }
-
 *, *:before, *:after {
   font-family: inherit;
   font-size: inherit;
@@ -175,6 +177,13 @@ section {
 }
 .explication article div pre .language-css {
   font-size: 0.90rem;
+}
+.selection .language-css {
+  display: inline-block;
+  width: 180px;
+}
+.selection .param {
+  padding-left: 20px;
 }
 #section-1 .explication article div pre {
   width: 48%;
