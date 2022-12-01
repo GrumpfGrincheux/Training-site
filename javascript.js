@@ -50,7 +50,6 @@ input.addEventListener('click', displayNav);
 input.addEventListener('load', ghostDisplay)
 
 function ghostDisplay() {
-    const input = document.getElementById('dropdown');
     const ghostWindow = document.createElement('div');
     const state = input.checked;
     if (state){
@@ -61,119 +60,128 @@ function ghostDisplay() {
     }
 }
 
+const showcase = document.querySelector(".showcase");
+
+const flexProperties = [
+    "flex-direction",
+    "justify-content",
+    "align-content",
+    "align-items",
+    "flex-wrap",
+    "align-self",
+    "flex-grow",
+    "flex-shrink",
+    "flex-basis"];
+
 function reset() {
 
-    for (let y = document.querySelector(".showcase").childNodes.length; y > 2; y--) {
+    while (document.querySelectorAll(".showcase > div").length > 4) {
         document.querySelector(".showcase").lastChild.remove();
     }
-    const showcase = document.querySelector(".showcase");
-    const newItem1 = document.createElement("div");
-    newItem1.classList.add("fi", "fi-1");
-    const newItemText1 = document.createElement("p");
-    newItemText1.textContent = "1";
-    newItem1.appendChild(newItemText1);
-    showcase.appendChild(newItem1);
-    const newItem2 = document.createElement("div");
-    newItem2.classList.add("fi", "fi-2");
-    const newItemText2 = document.createElement("p");
-    newItemText2.textContent = "2";
-    newItem2.appendChild(newItemText2);
-    showcase.appendChild(newItem2);
-    const newItem3 = document.createElement("div");
-    newItem3.classList.add("fi", "fi-3");
-    const newItemText3 = document.createElement("p");
-    newItemText3.textContent = "3";
-    newItem3.appendChild(newItemText3);
-    showcase.appendChild(newItem3);
-    const newItem4 = document.createElement("div");
-    newItem4.classList.add("fi", "fi-4");
-    const newItemText4 = document.createElement("p");
-    newItemText4.textContent = "4";
-    newItem4.appendChild(newItemText4);
-    showcase.appendChild(newItem4);
+
+    while (document.querySelectorAll(".showcase > div").length < 4) {
+        const newItem = document.createElement("div");
+        newItem.classList.add("fi", "fi-" + (showcase.querySelectorAll("div").length + 1).toString());
+        const newItemText = document.createElement("p");
+        newItemText.textContent = (showcase.querySelectorAll("div").length+1).toString();
+        newItem.appendChild(newItemText);
+        showcase.appendChild(newItem);
+    }
+
     document.querySelector(".showcase").className = "showcase";
-    document.querySelector("#flex-direction-select").selectedIndex = 0;
-    document.querySelector("#justify-content-select").selectedIndex = 0;
-    document.querySelector("#align-content-select").selectedIndex = 0;
-    document.querySelector("#align-items-select").selectedIndex = 0;
-    document.querySelector("#flex-wrap-select").selectedIndex = 0;
-    document.querySelector("#align-self-select").selectedIndex = 0;
-    document.querySelector("#flex-grow-select").selectedIndex = 0;
-    document.querySelector("#flex-shrink-select").selectedIndex = 0;
-    document.querySelector("#flex-basis-select").selectedIndex = 0;
+    
+    for (let i = 0; i < flexProperties.length; i++) {
+        document.querySelector("#" + flexProperties[i] + "-select").selectedIndex = 0
+    }
 }
+
 function addItem() {
-    const showcase = document.querySelector(".showcase");
     const newItem = document.createElement("div");
-    newItem.classList.add("fi", "fi-5");
+    newItem.classList.add("fi", "fi-" + (showcase.querySelectorAll("div").length + 1).toString());
     const newItemText = document.createElement("p");
-    newItemText.textContent = "5";
+    newItemText.textContent = (showcase.querySelectorAll("div").length+1).toString();
     newItem.appendChild(newItemText);
     showcase.appendChild(newItem);
 }
+
 function removeItem() {
-    if (document.querySelector(".showcase").childNodes.length == 3) {
+    if (document.querySelectorAll(".showcase > div").length === 1) {
         alert("You can't remove the last item !");
     } else {
-    document.querySelector(".showcase").lastChild.remove();
+        document.querySelector(".showcase > div:last-of-type").remove();
     }
 }
+
 function selectOptions() {
 
 // flex-container properties selector
 
-    const flexContainer = document.querySelector(".showcase");
-    const containerClassList = flexContainer.classList;
+    const showcaseClassList = showcase.classList;
     
     const flexDirection = document.querySelector("#flex-direction-select");
     
     const justifyContent = document.querySelector("#justify-content-select");
     const justifyContentOption = justifyContent.value;
-    const justifyContentClasses = ("justify-content-" + justifyContentOption).toString();
+    const justifyContentClasses = ("justify-content-" + justifyContentOption);
     
     const alignContent = document.querySelector("#align-content-select");
     const alignContentOption = alignContent.value;
-    const alignContentClasses = ("align-content-" + alignContentOption).toString();
+    const alignContentClasses = ("align-content-" + alignContentOption);
     
     const alignItems = document.querySelector("#align-items-select");
     const alignItemsOption = alignItems.value;
-    const alignItemsClasses = ("align-items-" + alignItemsOption).toString();
+    const alignItemsClasses = ("align-items-" + alignItemsOption);
     
     const flexWrap = document.querySelector("#flex-wrap-select");
     
-    flexContainer.className = "showcase";
-    containerClassList.add(flexDirection.value);
-    containerClassList.add(justifyContentClasses);
-    containerClassList.add(alignContentClasses);
-    containerClassList.add(alignItemsClasses);
-    containerClassList.add(flexWrap.value);
+    showcase.className = "showcase";
+    showcaseClassList.add(flexDirection.value);
+    showcaseClassList.add(justifyContentClasses);
+    showcaseClassList.add(alignContentClasses);
+    showcaseClassList.add(alignItemsClasses);
+    showcaseClassList.add(flexWrap.value);
 
 // flex-items properties selector
 
-    const flexItem = document.querySelector(".fi-2");
+    const itemSelect = document.querySelector("#item-select");
+    const selectedItem = itemSelect.value;
+
+    const flexItem = document.querySelector(".fi-" + selectedItem);
     const itemClassList = flexItem.classList;
 
     const alignSelf = document.querySelector("#align-self-select");
     const alignSelfOption = alignSelf.value;
-    const alignSelfClasses = ("align-self-" + alignSelfOption).toString();
+    const alignSelfClasses = ("align-self-" + alignSelfOption);
 
     const flexGrow = document.querySelector("#flex-grow-select");
     const flexGrowOption = flexGrow.value;
-    const flexGrowClasses = ("flex-grow-" + flexGrowOption).toString();
+    const flexGrowClasses = ("flex-grow-" + flexGrowOption);
 
     const flexShrink = document.querySelector("#flex-shrink-select");
     const flexShrinkOption = flexShrink.value;
-    const flexShrinkClasses = ("flex-shrink-" + flexShrinkOption).toString();
+    const flexShrinkClasses = ("flex-shrink-" + flexShrinkOption);
 
     const flexBasis = document.querySelector("#flex-basis-select");
     const flexBasisOption = flexBasis.value;
-    const flexBasisClasses = ("flex-basis-" + flexBasisOption).toString();
+    const flexBasisClasses = ("flex-basis-" + flexBasisOption);
 
     flexItem.className = "fi";
-    itemClassList.add("fi-2");
+    itemClassList.add("fi-" + selectedItem);
     itemClassList.add(alignSelfClasses);
     itemClassList.add(flexGrowClasses);
     itemClassList.add(flexShrinkClasses);
     itemClassList.add(flexBasisClasses);
+}
 
+const flexItemProperties = [
+    "align-self",
+    "flex-grow",
+    "flex-shrink",
+    "flex-basis"];
+
+function reinitValues(itemNumber) {
+    let style = window.getComputedStyle(document.querySelector(".fi-" + itemNumber), null);
+    for (let i = 0; i < flexItemProperties.length; i++) {
+        document.querySelector("#" + flexItemProperties[i] + "-select > option[value='" + style.getPropertyValue(flexItemProperties[i]) + "']").selected = true;
+    }
 }
