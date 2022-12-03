@@ -1,0 +1,30 @@
+#form-container {
+    border: 5px black solid;
+    top: 150px;
+    left: 50px;
+    position: absolute;
+}
+
+form .form {
+    display: table;
+}
+
+div .form {
+    display: table-row;
+}
+
+.form-label, input {
+    display: table-cell;
+    margin-bottom: 10px;
+}
+
+.form-label {
+    padding-right: 10px;
+}
+
+.container {
+    border: solid black 5px;
+    position: absolute;
+    left: 50px;
+    top: 350px;
+}

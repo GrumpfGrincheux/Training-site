@@ -1,8 +1,10 @@
 <html>
     <body>
         <head>
-            <link rel="stylesheet" href="style.css"/>
+            <link rel="stylesheet" href="style.css"/>            
+            <link rel="stylesheet" href="playstyle.css"/>            
             <script src="javascript.js" defer></script>
+            <script src="playscript.js" defer></script>
             <noscript>Pour utiliser ce site, merci d'activer JavaScript.</noscript>
             <div id="font-links">
                 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,5 +44,22 @@
             <p>Height : <span id="height-counter"></span></p>
         </div>
 
+        <div id="form-container">
+            <form onsubmit="apply();return false" method="get" class="form">
+                <div class="form">
+                    <label class="form-label" for="width">Width (pixels, min: 10)</label>
+                    <input type="number" name="width" id="width" min="10" placeholder="enter a number" required>
+                </div>
+                <div class="form">
+                    <label class="form-label" for="height">Height (pixels, min: 10)</label>
+                    <input type="number" name="height" id="height" min="10" placeholder="enter a number" required>
+                </div>
+                <div class="form">
+                    <input type="submit" value="Apply">
+                </div>
+            </form>
+        </div>
+
+        <div class="container"></div>
     </body>
 </html>
