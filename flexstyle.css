@@ -221,7 +221,12 @@ section {
   flex-shrink: 1;
   flex-basis: auto;
   padding: 0;
+  cursor: pointer;
 }
+.fi:hover {
+  background-color: #00a4aa;
+}
+
 .fi p {
   color: beige;
 }
@@ -419,6 +424,38 @@ section {
 }
 .flex-basis-250px {
   flex-basis: 250px;
+}
+
+#inputs {
+  width: fit-content;
+  display: inline-block;
+}
+#submit {
+  display: inline-block;
+  width: fit-content;
+  margin-left: 20px;
+}
+
+form .form {
+  display: table;
+}
+
+div .form {
+  display: table-row;
+}
+
+.form-label, input {
+  display: table-cell;
+  margin-bottom: 4px;
+}
+
+.form-label {
+  padding-right: 10px;
+}
+
+#submit {
+  position: relative;
+  right: 0;
 }
 
 @media screen and (min-width: 1150px) {

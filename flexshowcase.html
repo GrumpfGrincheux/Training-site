@@ -160,7 +160,7 @@ flex-item {
             </div>
             <div class="flex-items-options">
                 <h4><code class="language-css">flex-item {</code>
-                    <select onchange="reinitValues(this.value); selectOptions()" id="item-select">
+                    <select onchange="reinitValues(this.value); selectOptions(); onchangeSelectItem()" id="item-select">
                         <option value="1">item n°1</option>
                         <option value="2">item n°2</option>
                         <option value="3">item n°3</option>
@@ -187,7 +187,7 @@ flex-item {
                 <div><label for="flex-shrink-select"><code class="language-css param">flex-shrink:</code></label>
                 <select onchange="selectOptions()" id="flex-shrink-select">
                     <option value="0">0;</option>
-                    <option value="1">1;</option>
+                    <option selected value="1">1;</option>
                     <option value="2">2;</option>
                     <option value="3">3;</option>
                     <option value="4">4;</option>
@@ -197,22 +197,41 @@ flex-item {
                 <select onchange="selectOptions()" id="flex-basis-select">
                     <option value="auto">auto;</option>
                     <option value="50px">50px;</option>
-                    <option value="100px">100px;<px/option>
+                    <option value="100px">100px;</option>
                     <option value="150px">150px;</option>
                     <option value="200px">200px;</option>
                     <option value="250px">250px;</option>
                 </select></div>
                 <h4><code class="language-css">}</code></h4>
             </div>
+            <div id="form-container">
+                <div id="inputs">
+                    <form onsubmit="apply();return false" method="get" class="form">
+                        <div class="form">
+                            <label class="form-label" for="width">Item width (pixels, min: 10)</label>
+                            <input type="number" name="width" id="width" min="10" placeholder="enter a number" required>
+                        </div>
+                        <div class="form">
+                            <label class="form-label" for="height">Item height (pixels, min: 10)</label>
+                            <input type="number" name="height" id="height" min="10" placeholder="enter a number" required>
+                        </div>
+                    </div>
+                    <div id="submit">
+                        <div class="form">
+                            <input type="submit" value="Apply">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </section>
         <section class="demonstration section-2">
             <div class="flex-cont showcase">
                 <span class="horizontal-axis">Main Axis</span>
                 <span class="vertical-axis">Cross Axis</span>
-                <div class="fi fi-1"><p>1</p></div>
-                <div class="fi fi-2"><p>2</p></div>
-                <div class="fi fi-3"><p>3</p></div>
-                <div class="fi fi-4"><p>4</p></div>
+                <div class="fi fi-1" onclick="onclickItem(1)"><p>1</p></div>
+                <div class="fi fi-2" onclick="onclickItem(2)"><p>2</p></div>
+                <div class="fi fi-3" onclick="onclickItem(3)"><p>3</p></div>
+                <div class="fi fi-4" onclick="onclickItem(4)"><p>4</p></div>
             </div>
         </section>
 

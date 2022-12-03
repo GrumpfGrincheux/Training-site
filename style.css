@@ -125,7 +125,7 @@ main {
   position: relative;
   top: 150px;
   width: 85vw;
-  height: 2000px;
+  /* height: 2000px; */
   padding-left: 2.5vw;
   padding-right: 2.5vw;
   margin-left: auto;
