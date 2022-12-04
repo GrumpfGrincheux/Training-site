@@ -218,7 +218,7 @@ function selectOptions() {
   itemClassList.add(flexShrinkClasses);
   itemClassList.add(flexBasisClasses);
 
-  return { selectedItem };
+  return selectedItem;
 }
 
 function reinitValues(itemNumber) {
