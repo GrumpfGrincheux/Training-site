@@ -20,27 +20,45 @@ window.onresize = () => {
   document.getElementById("height-counter").textContent = window.innerHeight;
   document.getElementById("width-counter").textContent = window.innerWidth;
 };
+function createGhostWindow() {
+  const ghostWindow = document.createElement("div");
+  ghostWindow.id = "ghost-window";
+  ghostWindow.classList.add(
+    "ghost-window",
+    "ghost-window-hide",
+    "ghost-window-none"
+  );
+  document.body.appendChild(ghostWindow);
+}
+window.onload = createGhostWindow();
 
 const hideNav = () => {
   const input = document.getElementById("dropdown");
   input.checked = false;
 
-  const ghostWindow = document.getElementById("ghost-window");
-  ghostWindow.remove();
+  const ghostWindow = document.querySelector("#ghost-window");
+  ghostWindow.classList.add("ghost-window-hide");
+  setTimeout(() => {
+    ghostWindow.classList.add("ghost-window-none");
+  }, 500);
 };
 
 function displayNav() {
   const input = document.getElementById("dropdown");
-  const ghostWindow = document.createElement("div");
+  const ghostWindow = document.querySelector("#ghost-window");
   const state = input.checked;
   if (state) {
-    ghostWindow.className = "ghost-window";
-    ghostWindow.id = "ghost-window";
-    document.body.appendChild(ghostWindow);
     ghostWindow.addEventListener("click", hideNav);
+    ghostWindow.classList.add("ghost-window-show");
+    ghostWindow.classList.remove("ghost-window-hide");
+    setTimeout(() => {
+      ghostWindow.classList.remove("ghost-window-none");
+    }, 500);
   } else {
-    const ghostWindow = document.getElementById("ghost-window");
-    ghostWindow.remove();
+    ghostWindow.classList.add("ghost-window-hide");
+    setTimeout(() => {
+      ghostWindow.classList.add("ghost-window-none");
+    }, 500);
   }
 }
 
@@ -49,16 +67,43 @@ input.addEventListener("click", displayNav);
 input.addEventListener("load", ghostDisplay);
 
 function ghostDisplay() {
-  const ghostWindow = document.createElement("div");
+  const ghostWindow = document.querySelector("#ghost-window");
   const state = input.checked;
   if (state) {
-    ghostWindow.className = "ghost-window";
-    ghostWindow.id = "ghost-window";
-    document.body.appendChild(ghostWindow);
-    ghostWindow.addEventListener("click", hideNav);
+    ghostWindow.classList.add("ghost-window-show");
+    ghostWindow.classList.remove("ghost-window-hide");
+    setTimeout(() => {
+      ghostWindow.classList.remove("ghost-window-none");
+    }, 500);
   }
 }
 
+/* function ghostWindow() {
+  const ghostWindow = document.createElement("div");
+  ghostWindow.classList.add("ghost-window", "ghost-window-hide");
+  ghostWindow.id = "ghost-window";
+  document.body.appendChild(ghostWindow);
+  ghostWindow.addEventListener("click", navHide);
+}
+window.onload = ghostWindow();
+
+const input = document.getElementById("dropdown");
+input.addEventListener("load", navShow);
+const state = input.checked;
+
+function navShow() {
+  if (state) {
+    const ghostWindow = document.getElementById("ghost-Window");
+    ghostWindow.className = "ghost-window";
+  }
+}
+
+function navHide() {
+  input.checked = false;
+  const ghostWindow = document.getElementById("ghostWindow");
+  ghostWindow.classList.add("ghost-window-hide");
+}
+ */
 const showcase = document.querySelector(".showcase");
 
 const flexProperties = [
@@ -88,7 +133,10 @@ function getInputs() {
   return { itemHeight, itemWidth };
 }
 
-let selectedItem = document.querySelector("#item-select").value;
+let selectedItem =
+  document.querySelector("#item-select") !== null
+    ? document.querySelector("#item-select").value
+    : false;
 
 function onchangeSelectItem() {
   selectedItem = document.querySelector("#item-select").value;
