@@ -12,53 +12,45 @@ function printRandomNum() {
   document.getElementById("random-number").textContent = randomNum;
 }
 
-window.onload = () => {
+function screenSizeCounter() {
   document.getElementById("height-counter").textContent = window.innerHeight;
   document.getElementById("width-counter").textContent = window.innerWidth;
-};
-window.onresize = () => {
-  document.getElementById("height-counter").textContent = window.innerHeight;
-  document.getElementById("width-counter").textContent = window.innerWidth;
-};
+}
+window.onload = () => { screenSizeCounter() }
+window.onresize = () => { screenSizeCounter() }
 
-const hideNav = () => {
-  const input = document.getElementById("dropdown");
-  input.checked = false;
-
-  const ghostWindow = document.getElementById("ghost-window");
-  ghostWindow.remove();
-};
-
-function displayNav() {
-  const input = document.getElementById("dropdown");
-  const ghostWindow = document.createElement("div");
-  const state = input.checked;
-  if (state) {
-    ghostWindow.className = "ghost-window";
-    ghostWindow.id = "ghost-window";
-    document.body.appendChild(ghostWindow);
-    ghostWindow.addEventListener("click", hideNav);
+function navDisplay() {
+  const ghostWindow = document.querySelector("#ghost-window")
+  const ghostWindowClassList = ghostWindow.classList
+  let isDisplayed = document.getElementById("dropdown").checked
+  if (isDisplayed) {
+    ghostWindowClassList.remove("ghost-window-none")    
+    let opacity = 0
+    // Se répète toutes les 10 ms
+    let fadeIn = setInterval(() => {
+      opacity += 0.01
+      ghostWindow.style = `opacity: ${opacity};`
+    }, 10);
+    // S'arrête après 600 ms
+    setTimeout(() => { clearInterval(fadeIn) }, 600);
   } else {
-    const ghostWindow = document.getElementById("ghost-window");
-    ghostWindow.remove();
+    let opacity = 0.6
+    // Se répète toutes les 10 ms
+    let fadeOut = setInterval(() => {
+      opacity -= 0.01
+      ghostWindow.style = `opacity: ${opacity};`
+    }, 10);
+    // S'arrête après 600 ms
+    setTimeout(() => { clearInterval(fadeOut) }, 600);
+
+    setTimeout(() => {ghostWindowClassList.add("ghost-window-none")}, 600);
   }
 }
 
-const input = document.getElementById("dropdown");
-input.addEventListener("click", displayNav);
-input.addEventListener("load", ghostDisplay);
-
-function ghostDisplay() {
-  const ghostWindow = document.createElement("div");
-  const state = input.checked;
-  if (state) {
-    ghostWindow.className = "ghost-window";
-    ghostWindow.id = "ghost-window";
-    document.body.appendChild(ghostWindow);
-    ghostWindow.addEventListener("click", hideNav);
-  }
+function navHide() {
+  document.getElementById("dropdown").checked = false
+  navDisplay()
 }
-
 const showcase = document.querySelector(".showcase");
 
 const flexProperties = [
@@ -88,7 +80,10 @@ function getInputs() {
   return { itemHeight, itemWidth };
 }
 
-let selectedItem = document.querySelector("#item-select").value;
+let selectedItem =
+  document.querySelector("#item-select") !== null
+    ? document.querySelector("#item-select").value
+    : false;
 
 function onchangeSelectItem() {
   selectedItem = document.querySelector("#item-select").value;

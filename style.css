@@ -39,9 +39,7 @@ body {
   transform: translateX(-255px);
   transition: transform 0.6s ease-in-out;
 }
-#dropdown:checked ~ #dropdown-menu {
-  transform: translateX(0);
-}
+
 .ghost-window {
   position: fixed;
   height: 100%;
@@ -49,8 +47,14 @@ body {
   top: 0px;
   left: 0px;
   background-color: rgb(66, 66, 66);
-  opacity: 0.4;
-  transition: all 0.2s ease;
+  z-index: 5;
+  opacity: 0;
+}
+.ghost-window-none {
+  display: none;
+}
+#dropdown:checked ~ #dropdown-menu {
+  transform: translateX(0);
 }
 #home {
   position: absolute;

@@ -19,7 +19,7 @@
                     <rect x="0" y="24" rx="3" ry="3" width="32" height="3" />
                 </svg>
             </label>
-            <input type="checkbox" id="dropdown">
+            <input type="checkbox" id="dropdown" onchange="navDisplay()">
             <nav id="dropdown-menu">
                 <a href="index.html"><svg id="home" viewBox="0 0 16 16" fill="#C0C0C0" >
                     <path d="M15.45,7L14,5.551V2c0-0.55-0.45-1-1-1h-1c-0.55,0-1,0.45-1,1v0.553L9,0.555C8.727,0.297,8.477,0,8,0S7.273,0.297,7,0.555
@@ -50,7 +50,7 @@
                 <p>the random-number will be ... ---> <span id="random-number"></span></p>        
             </section>
         </main>
-
+        <div class="ghost-window ghost-window-none" id="ghost-window" onclick="navHide()"></div>
         <footer>
             <p>Coded by Grumpf.</p>
         </footer>
