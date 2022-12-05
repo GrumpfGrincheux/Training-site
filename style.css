@@ -48,9 +48,8 @@ body {
   left: 0px;
   background-color: rgb(66, 66, 66);
   z-index: 5;
+  opacity: 0;
 }
-.ghost-window-opaque {
-  opacity: 0.4;
 .ghost-window-none {
   display: none;
 }
