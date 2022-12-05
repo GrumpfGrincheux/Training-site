@@ -42,13 +42,15 @@ body {
 #dropdown:checked ~ #dropdown-menu {
   transform: translateX(0);
 }
-.ghost-window{
+.ghost-window {
   position: fixed;
   height: 100%;
   width: 100%;
   top: 0px;
   left: 0px;
-  background-color: rgba(66, 66, 66, 0.40);
+  background-color: rgb(66, 66, 66);
+  opacity: 0.4;
+  transition: all 0.2s ease;
 }
 #home {
   position: absolute;
