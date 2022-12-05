@@ -24,13 +24,24 @@ function navDisplay() {
   const ghostWindowClassList = ghostWindow.classList
   let isDisplayed = document.getElementById("dropdown").checked
   if (isDisplayed) {
-    ghostWindowClassList.remove("ghost-window-transparent")
-    ghostWindowClassList.add("ghost-window-opaque")
-    setTimeout(() => {ghostWindowClassList.remove("ghost-window-none")}, 505);
+    ghostWindowClassList.remove("ghost-window-none")
+    setTimeout(() => { ghostWindow.style = "opacity: 0.1;"}, 100)
+    setTimeout(() => { ghostWindow.style = "opacity: 0.2;"}, 200)
+    setTimeout(() => { ghostWindow.style = "opacity: 0.3;"}, 300)
+    setTimeout(() => { ghostWindow.style = "opacity: 0.4;"}, 400)
+    setTimeout(() => { ghostWindow.style = "opacity: 0.5;"}, 500)
+    setTimeout(() => { ghostWindow.style = "opacity: 0.6;"}, 600)
+    // ghostWindowClassList.add("ghost-window-opaque")
   } else {
-    ghostWindowClassList.add("ghost-window-transparent")
-    ghostWindowClassList.remove("ghost-window-opaque")
-    setTimeout(() => {ghostWindowClassList.add("ghost-window-none")}, 505);
+    // ghostWindowClassList.remove("ghost-window-opaque")
+    setTimeout(() => { ghostWindow.style = "opacity: 0.6;"}, 600)
+    setTimeout(() => { ghostWindow.style = "opacity: 0.5;"}, 500)
+    setTimeout(() => { ghostWindow.style = "opacity: 0.4;"}, 400)
+    setTimeout(() => { ghostWindow.style = "opacity: 0.3;"}, 300)
+    setTimeout(() => { ghostWindow.style = "opacity: 0.2;"}, 200)
+    setTimeout(() => { ghostWindow.style = "opacity: 0.1;"}, 100)
+    ghostWindow.style ="opacity: 0;"
+    setTimeout(() => {ghostWindowClassList.add("ghost-window-none")}, 600);
   }
 }
 function navHide() {
