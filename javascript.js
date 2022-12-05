@@ -25,6 +25,7 @@ function navDisplay() {
   let isDisplayed = document.getElementById("dropdown").checked
   if (isDisplayed) {
     ghostWindowClassList.remove("ghost-window-none")
+    ghostWindow.style = "opacity: 0;"
     setTimeout(() => { ghostWindow.style = "opacity: 0.1;"}, 100)
     setTimeout(() => { ghostWindow.style = "opacity: 0.2;"}, 200)
     setTimeout(() => { ghostWindow.style = "opacity: 0.3;"}, 300)
