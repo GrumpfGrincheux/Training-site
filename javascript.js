@@ -101,9 +101,8 @@ function onclickItem(index) {
 
 function reset() {
   while (document.querySelectorAll(".showcase > div").length > 4) {
-    document.querySelector(".showcase").lastChild.remove();
+    removeItem();
   }
-
   while (document.querySelectorAll(".showcase > div").length < 4) {
     addItem();
   }
@@ -111,9 +110,7 @@ function reset() {
   document.querySelector(".showcase").className = "showcase";
 
   for (let i = 0; i < flexProperties.length; i++) {
-    document.querySelector(
-      "#" + flexProperties[i] + "-select"
-    ).selectedIndex = 0;
+    document.querySelector(`#${flexProperties[i]}-select`).selectedIndex = 0;
   }
 
   document.querySelector("#flex-shrink-select").selectedIndex = 1;
@@ -149,6 +146,7 @@ function addItem() {
   );
   newItem.appendChild(newItemText);
   showcase.appendChild(newItem);
+  onaddItem();
 }
 
 function removeItem() {
@@ -156,6 +154,7 @@ function removeItem() {
     alert("You can't remove the last item !");
   } else {
     document.querySelector(".showcase > div:last-of-type").remove();
+    document.querySelector("#item-select > option:last-of-type").remove();
   }
 }
 
@@ -243,5 +242,12 @@ function apply() {
   const selectedItem = selectOptions();
   const item = document.querySelector(`.fi-${selectedItem}`);
   item.style = `width: ${itemValues.itemWidth}px;
-                  height: ${itemValues.itemHeight}px;`;
+                height: ${itemValues.itemHeight}px;`;
+}
+
+function onaddItem() {
+  const newOption = document.createElement("option");
+  newOption.value = document.querySelectorAll(".showcase > div").length;
+  newOption.textContent = `item n°${newOption.value}`;
+  document.querySelector("#item-select").appendChild(newOption);
 }

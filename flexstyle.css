@@ -205,7 +205,25 @@ section {
 .selection {
   display: block;
 }
-
+.flex-item {
+  box-sizing: border-box;
+  background-color : #017679;
+  text-align: center;
+  border: beige solid 1px;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  align-self: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  padding: 0;
+}
+.flex-item p {
+  color: beige;
+}
 .fi {
   box-sizing: border-box;
   background-color : #017679;
