@@ -12,53 +12,31 @@ function printRandomNum() {
   document.getElementById("random-number").textContent = randomNum;
 }
 
-window.onload = () => {
+function screenSizeCounter() {
   document.getElementById("height-counter").textContent = window.innerHeight;
   document.getElementById("width-counter").textContent = window.innerWidth;
-};
-window.onresize = () => {
-  document.getElementById("height-counter").textContent = window.innerHeight;
-  document.getElementById("width-counter").textContent = window.innerWidth;
-};
+}
+window.onload = () => { screenSizeCounter() }
+window.onresize = () => { screenSizeCounter() }
 
-const hideNav = () => {
-  const input = document.getElementById("dropdown");
-  input.checked = false;
-
-  const ghostWindow = document.getElementById("ghost-window");
-  ghostWindow.remove();
-};
-
-function displayNav() {
-  const input = document.getElementById("dropdown");
-  const ghostWindow = document.createElement("div");
-  const state = input.checked;
-  if (state) {
-    ghostWindow.className = "ghost-window";
-    ghostWindow.id = "ghost-window";
-    document.body.appendChild(ghostWindow);
-    ghostWindow.addEventListener("click", hideNav);
+function navDisplay() {
+  const ghostWindow = document.querySelector("#ghost-window")
+  const ghostWindowClassList = ghostWindow.classList
+  let isDisplayed = document.getElementById("dropdown").checked
+  if (isDisplayed) {
+    ghostWindowClassList.remove("ghost-window-transparent")
+    ghostWindowClassList.add("ghost-window-opaque")
+    setTimeout(() => {ghostWindowClassList.remove("ghost-window-none")}, 505);
   } else {
-    const ghostWindow = document.getElementById("ghost-window");
-    ghostWindow.remove();
+    ghostWindowClassList.add("ghost-window-transparent")
+    ghostWindowClassList.remove("ghost-window-opaque")
+    setTimeout(() => {ghostWindowClassList.add("ghost-window-none")}, 505);
   }
 }
-
-const input = document.getElementById("dropdown");
-input.addEventListener("click", displayNav);
-input.addEventListener("load", ghostDisplay);
-
-function ghostDisplay() {
-  const ghostWindow = document.createElement("div");
-  const state = input.checked;
-  if (state) {
-    ghostWindow.className = "ghost-window";
-    ghostWindow.id = "ghost-window";
-    document.body.appendChild(ghostWindow);
-    ghostWindow.addEventListener("click", hideNav);
-  }
+function navHide() {
+  document.getElementById("dropdown").checked = false
+  navDisplay()
 }
-
 const showcase = document.querySelector(".showcase");
 
 const flexProperties = [
@@ -88,7 +66,10 @@ function getInputs() {
   return { itemHeight, itemWidth };
 }
 
-let selectedItem = document.querySelector("#item-select").value;
+let selectedItem =
+  document.querySelector("#item-select") !== null
+    ? document.querySelector("#item-select").value
+    : false;
 
 function onchangeSelectItem() {
   selectedItem = document.querySelector("#item-select").value;

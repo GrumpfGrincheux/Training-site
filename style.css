@@ -49,8 +49,17 @@ body {
   top: 0px;
   left: 0px;
   background-color: rgb(66, 66, 66);
+}
+.ghost-window-opaque {
+  transition: opacity 0.5s ease-in-out;
   opacity: 0.4;
-  transition: all 0.2s ease;
+}
+.ghost-window-transparent {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+.ghost-window-none {
+  display: none;
 }
 #home {
   position: absolute;
