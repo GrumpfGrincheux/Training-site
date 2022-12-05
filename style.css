@@ -49,14 +49,12 @@ body {
   top: 0px;
   left: 0px;
   background-color: rgb(66, 66, 66);
+}
+.ghost-window-opaque {
+  transition: opacity 0.5s ease-in-out;
   opacity: 0.4;
-  transition: opacity 0.5s ease-in-out;
 }
-.ghost-window-show {
-  transition: opacity 0.5s ease-in-out;
-}
-
-.ghost-window-hide {
+.ghost-window-transparent {
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
 }
