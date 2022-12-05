@@ -31,16 +31,9 @@ function navDisplay() {
     setTimeout(() => { ghostWindow.style = "opacity: 0.4;"}, 400)
     setTimeout(() => { ghostWindow.style = "opacity: 0.5;"}, 500)
     setTimeout(() => { ghostWindow.style = "opacity: 0.6;"}, 600)
-    // ghostWindowClassList.add("ghost-window-opaque")
+    ghostWindowClassList.add("ghost-window-opaque")
   } else {
-    // ghostWindowClassList.remove("ghost-window-opaque")
-    setTimeout(() => { ghostWindow.style = "opacity: 0.6;"}, 600)
-    setTimeout(() => { ghostWindow.style = "opacity: 0.5;"}, 500)
-    setTimeout(() => { ghostWindow.style = "opacity: 0.4;"}, 400)
-    setTimeout(() => { ghostWindow.style = "opacity: 0.3;"}, 300)
-    setTimeout(() => { ghostWindow.style = "opacity: 0.2;"}, 200)
-    setTimeout(() => { ghostWindow.style = "opacity: 0.1;"}, 100)
-    ghostWindow.style ="opacity: 0;"
+    ghostWindowClassList.remove("ghost-window-opaque")
     setTimeout(() => {ghostWindowClassList.add("ghost-window-none")}, 600);
   }
 }
