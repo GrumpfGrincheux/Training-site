@@ -1,0 +1,67 @@
+body {
+  color: #F45D05;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+*, *:before, *:after {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Document */
+
+main {
+  background-color: rgb(51, 51, 51);
+  position: relative;
+  top: 150px;
+  width: 85vw;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-left: #d6d6d6 groove 10px;
+  border-top: #d6d6d6 groove 10px;
+}
+
+#random-number-container {
+  font-size: 20px;
+  border: solid transparent;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+#random-number-container span {
+  margin-left: 10px;
+}
+#random-number-container button {
+  background-color: #5e5e5e;
+  border: #d6d6d6 outset 4px;
+  border-radius: 10px;
+  padding: 5px;
+  z-index: 5;
+  margin-left: auto;
+  margin-right: auto;
+}
+#random-number-container button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  width: 100vw;
+  height: auto;
+  background-color: #d6d6d6;
+  font-size: 16px;
+  padding: 0px;
+  left: 0px;
+}
+footer p {
+  margin: 0px;
+  padding: 2px;
+}
