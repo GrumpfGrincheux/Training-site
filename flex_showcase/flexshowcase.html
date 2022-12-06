@@ -1,0 +1,248 @@
+<html>
+    <body>
+        <head>
+            <link rel="stylesheet" href="/prism/prism.css"/>
+            <link rel="stylesheet" href="/global/global.css"/>
+            <link rel="stylesheet" href="/flex_showcase/flexstyle.css"/>
+            <script src="/global/global.js" defer></script>
+            <script src="/flex_showcase/flex_showcase.js" defer></script>
+
+            <script src="/prism/prism.js"></script>
+            <noscript>Pour utiliser ce site, merci d'activer JavaScript.</noscript>
+            <div id="font-links">
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+            </div>
+        </head>
+        <title>Flexbox Showcase</title>
+        <header class="navigation">
+            <label for="dropdown">
+                <svg viewBox="0 0 32 32" fill="#C0C0C0">
+                    <rect x="0" y="4" rx="3" ry="3" width="32" height="3" />
+                    <rect x="0" y="14" rx="3" ry="3" width="32" height="3" />
+                    <rect x="0" y="24" rx="3" ry="3" width="32" height="3" />
+                </svg>
+            </label>
+            <input type="checkbox" id="dropdown" onchange="navDisplay()">
+            <nav id="dropdown-menu">
+                <a href="/index.html"><svg id="home" viewBox="0 0 16 16" fill="#C0C0C0" >
+                    <path d="M15.45,7L14,5.551V2c0-0.55-0.45-1-1-1h-1c-0.55,0-1,0.45-1,1v0.553L9,0.555C8.727,0.297,8.477,0,8,0S7.273,0.297,7,0.555
+                        L0.55,7C0.238,7.325,0,7.562,0,8c0,0.563,0.432,1,1,1h1v6c0,0.55,0.45,1,1,1h3v-5c0-0.55,0.45-1,1-1h2c0.55,0,1,0.45,1,1v5h3  
+                        c0.55,0,1-0.45,1-1V9h1c0.568,0,1-0.437,1-1C16,7.562,15.762,7.325,15.45,7z"/>
+                </svg></a>
+                <ul>
+                    <li>
+                        <p><a href="/playground/playground.html">Playground</a></p>
+                    </li>
+                    <li>
+                        <p><a href="/flex_showcase/flexshowcase.html">Flexbox Showcase</a></p>
+                    </li>
+                </ul>
+            </nav>    
+        </header>
+
+        <div id="screen-size-counter">
+            <p>Page size in pixels :</p>
+            <p>Width : <span id="width-counter"></span></p>
+            <p>Height : <span id="height-counter"></span></p>
+        </div>
+        
+        <header class="title">
+            <h1>Flexbox properties showcase</h1>
+        </header>
+          
+        <main>
+        
+        <section class="explication section-1">
+            <article>
+                <h4>Intro</h4>
+                <p>Here's a 510px wide div (500px free space + 10px border) holding 50px square items. </p>
+                <p>It has the <code class="language-css">display: flex;</code> property which turns it into a flex container. 
+                    Items inside are turned into flex items.</p>
+                <p>Here are the default properties of flex-containers and flex-items that are set to 
+                  the container and the contained items when the
+                  <code class="language-css">display: flex;</code>
+                  property is applied to the container.
+                </p>
+                <div>
+                    <pre>
+                        <code class="language-css">
+flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content:normal;
+  align-content: normal;
+  align-items: normal;
+  flex-wrap: nowrap;
+}</code>
+                    </pre>
+                    <div style="border: dashed black 1px"></div>
+                    <pre>
+                        <code class="language-css">
+flex-item {
+  align-self: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}</code>
+                    </pre>              
+                </div>
+            </article>
+        </section>
+        <section class="demonstration section-1">
+            <div class="flex-cont">
+                <span class="horizontal-axis">Main Axis</span>
+                <span class="vertical-axis">Cross Axis</span>
+                <div class="flex-item"><p>1</p></div>
+                <div class="flex-item"><p>2</p></div>
+                <div class="flex-item"><p>3</p></div>
+                <div class="flex-item"><p>4</p></div>
+            </div>  
+        </section>
+        <section class="selection section-2">
+            <div class="header">
+                <h4>Actual showcase</h4>
+                <div>
+                    <button onclick="reset()">Reset</button>
+                    <button onclick="addItem()" id="add-item">Add Item</button>
+                    <button onclick="removeItem()" id="remove-item">Remove Item</button>
+                </div>
+            </div>
+            <p>Use the selectors to change properties.</p>
+            <div class="flex-container-options">
+                <h4><code class="language-css">flex-container {</code></h4>
+                <div><label for="flex-direction-select"><code class="language-css param">flex-direction:</code></label>
+                <select onchange="selectOptions()" id="flex-direction-select">
+                    <option value="row">row;</option>
+                    <option value="col">column;</option>
+                    <option value="row-rev">row-reverse;</option>
+                    <option value="col-rev">column-reverse;</option>
+                </select></div>
+                <div><label for="justify-content-select"><code class="language-css param">justify-content:</code></label>
+                <select onchange="selectOptions()" id="justify-content-select">
+                    <option value="normal">normal;</option>
+                    <option value="start">start;</option>
+                    <option value="end">end;</option>
+                    <option value="flex-start">flex-start;</option>
+                    <option value="flex-end">flex-end;</option>
+                    <option value="center">center;</option>
+                    <option value="space-between">space-between;</option>
+                    <option value="space-around">space-around;</option>
+                    <option value="space-evenly">space-evenly;</option>
+                    <option value="baseline">baseline;</option>
+                    <option value="left">left;</option>
+                    <option value="right">right;</option>
+                </select></div>
+                <div><label for="align-content-select"><code class="language-css param">align-content:</code></label>
+                <select onchange="selectOptions()" id="align-content-select">
+                    <option value="normal">normal;</option>
+                    <option value="center">center;</option>
+                    <option value="flex-start">flex-start;</option>
+                    <option value="flex-end">flex-end;</option>
+                    <option value="space-around">space-around;</option>
+                    <option value="space-between">space-between;</option>
+                    <option value="stretch">stretch;</option>
+                </select></div>
+                <div><label for="align-items-select"><code class="language-css param">align-items:</code></label>
+                <select onchange="selectOptions()" id="align-items-select">
+                    <option value="normal">normal;</option>
+                    <option value="stretch">stretch;</option>
+                    <option value="center">center;</option>
+                    <option value="start">flex-start;</option>
+                    <option value="end">flex-end;</option>
+                    <option value="baseline">baseline;</option>
+                </select></div>
+                <div><label for="flex-wrap-select"><code class="language-css param">flex-wrap:</code></label>
+                <select onchange="selectOptions()" id="flex-wrap-select">
+                    <option value="nowrap">nowrap;</option>
+                    <option value="wrap">wrap;</option>
+                    <option value="wrap-rev">wrap-reverse;</option>
+                </select></div>
+                <h4><code class="language-css">}</code></h4>
+            </div>
+            <div class="flex-items-options">
+                <h4><code class="language-css">flex-item {</code>
+                    <select onchange="reinitValues(this.value); selectOptions(); onchangeSelectItem()" id="item-select">
+                        <option value="1">item n°1</option>
+                        <option value="2">item n°2</option>
+                        <option value="3">item n°3</option>
+                        <option value="4">item n°4</option>
+                    </select></h4>
+                <div><label for="align-self-select"><code class="language-css param">align-self:</code></label>
+                <select onchange="selectOptions()" id="align-self-select">
+                    <option value="auto">auto;</option>
+                    <option value="stretch">stretch;</option>
+                    <option value="baseline">baseline;</option>
+                    <option value="flex-start">flex-start;</option>
+                    <option value="flex-end">flex-end;</option>
+                    <option value="center">center;</option>
+                </select></div>
+                <div><label for="flex-grow-select"><code class="language-css param">flex-grow:</code></label>
+                <select onchange="selectOptions()" id="flex-grow-select">
+                    <option value="0">0;</option>
+                    <option value="1">1;</option>
+                    <option value="2">2;</option>
+                    <option value="3">3;</option>
+                    <option value="4">4;</option>
+                    <option value="5">5;</option>
+                </select></div>
+                <div><label for="flex-shrink-select"><code class="language-css param">flex-shrink:</code></label>
+                <select onchange="selectOptions()" id="flex-shrink-select">
+                    <option value="0">0;</option>
+                    <option selected value="1">1;</option>
+                    <option value="2">2;</option>
+                    <option value="3">3;</option>
+                    <option value="4">4;</option>
+                    <option value="5">5;</option>
+                </select></div>
+                <div><label for="flex-basis-select"><code class="language-css param">flex-basis:</code></label>
+                <select onchange="selectOptions()" id="flex-basis-select">
+                    <option value="auto">auto;</option>
+                    <option value="50px">50px;</option>
+                    <option value="100px">100px;</option>
+                    <option value="150px">150px;</option>
+                    <option value="200px">200px;</option>
+                    <option value="250px">250px;</option>
+                </select></div>
+                <h4><code class="language-css">}</code></h4>
+            </div>
+            <div id="form-container">
+                <div id="inputs">
+                    <form onsubmit="apply();return false" method="get" class="form">
+                        <div class="form">
+                            <label class="form-label" for="width">Item width (pixels, min: 10)</label>
+                            <input type="number" name="width" id="width" min="10" placeholder="enter a number" required>
+                        </div>
+                        <div class="form">
+                            <label class="form-label" for="height">Item height (pixels, min: 10)</label>
+                            <input type="number" name="height" id="height" min="10" placeholder="enter a number" required>
+                        </div>
+                    </div>
+                    <div id="submit">
+                        <div class="form">
+                            <input type="submit" value="Apply">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="demonstration section-2">
+            <div class="flex-cont showcase">
+                <span class="horizontal-axis">Main Axis</span>
+                <span class="vertical-axis">Cross Axis</span>
+                <div class="fi fi-1" onclick="onclickItem(1)"><p>1</p></div>
+                <div class="fi fi-2" onclick="onclickItem(2)"><p>2</p></div>
+                <div class="fi fi-3" onclick="onclickItem(3)"><p>3</p></div>
+                <div class="fi fi-4" onclick="onclickItem(4)"><p>4</p></div>
+            </div>
+        </section>
+
+        </main>
+
+        <footer>
+
+        </footer>
+        <div class="ghost-window ghost-window-none" id="ghost-window" onclick="navHide()"></div>
+    </body>
+</html>
