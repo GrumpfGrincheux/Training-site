@@ -1,0 +1,123 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+/*        Menu déroulant         */
+
+#dropdown {
+  position: fixed;
+  appearance: none;
+}
+#dropdown-menu {
+  color: #F45D05;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  position: fixed;
+  left: 5px;
+  top: 5px;
+  width: 250px;
+  background-color: rgb(70, 70, 70);
+  z-index: 9;
+  padding: 10px;
+  padding-top: 110px;
+  border: #d6d6d6 dashed 2px;
+  transform: translateX(-255px);
+  transition: transform 0.6s ease-in-out;
+}
+#dropdown-menu p {
+  padding: 10px;
+}
+#dropdown-menu a {
+  color: #F45D05;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+#dropdown:checked ~ #dropdown-menu {
+  transform: translateX(0);
+}
+.ghost-window {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: rgb(66, 66, 66);
+  opacity: 0.4;
+}
+.ghost-window-none {
+  display: none;
+}
+#home {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border: 5px outset #d6d6d6;
+  border-radius: 10px;
+  box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
+  -webkit-box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
+  -moz-box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
+}
+#dropdown-menu ul {
+  padding: 0px;
+}
+#dropdown-menu ul li {
+  list-style: none;
+}
+svg {
+  height: 100px;
+  width: 100px;
+  position: fixed;
+  background-color: rgb(51, 51, 51);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 5px;
+  border: 5px outset #d6d6d6;
+  border-radius: 10px;
+  box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
+  -webkit-box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
+  -moz-box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
+  z-index: 10;
+}
+svg:hover {
+  background-color: rgb(71, 71, 71);
+  cursor: pointer;
+}
+
+/*              Compteur de pixels               */
+
+#screen-size-counter {
+  border: solid black 1px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: auto;
+  height: auto;
+  border: 5px outset #d6d6d6;
+  border-radius: 10px;
+  box-shadow: 6px 6px 9px 1px rgba(0,0,0,0.29);
+  -webkit-box-shadow: 6px 6px 9px 1px rgba(0,0,0,0.29);
+  -moz-box-shadow: 6px 6px 9px 1px rgba(0,0,0,0.29);
+  background-color: rgb(51, 51, 51);
+  color: #d6d6d6;
+}
+#screen-size-counter p, #screen-size-counter span{
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  text-shadow: 2px 2px px rgba(0,0,0,0.6);
+}
