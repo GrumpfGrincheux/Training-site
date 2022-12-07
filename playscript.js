@@ -13,7 +13,7 @@ function rpsResult(userInput, computerChoice) {
     return "Draw";
   }
   const rules = { rock: "scissors", paper: "rock", scissors: "paper" };
-  if (userInput === rules[computerChoice]) {
+  if (computerChoice.toLowerCase() === rules[userInput.toLowerCase()]) {
     return "You win !";
   } else {
     return "You loose !";
