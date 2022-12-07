@@ -1,8 +1,8 @@
 <html>
     <body>
         <head>
-            <link rel="stylesheet" href="global.css"/>
             <link rel="stylesheet" href="playstyle.css"/>
+            <link rel="stylesheet" href="global.css">
             <script src="global.js" defer></script>
             <script src="playscript.js" defer></script>
             <noscript>Pour utiliser ce site, merci d'activer JavaScript.</noscript>
@@ -14,7 +14,7 @@
         <title>Playground 1</title>
         <header>
             <label for="dropdown">
-                <svg viewBox="0 0 32 32" fill="#C0C0C0">
+                <svg class="nav-img" id="menu" viewBox="0 0 32 32" fill="#C0C0C0">
                     <rect x="0" y="4" rx="3" ry="3" width="32" height="3" />
                     <rect x="0" y="14" rx="3" ry="3" width="32" height="3" />
                     <rect x="0" y="24" rx="3" ry="3" width="32" height="3" />
@@ -22,7 +22,7 @@
             </label>
             <input type="checkbox" id="dropdown" onchange="navDisplay()">
             <nav id="dropdown-menu">
-                <a href="index.html"><svg id="home" viewBox="0 0 16 16" fill="#C0C0C0" >
+                <a href="index.html"><svg class="nav-img" id="home" viewBox="0 0 16 16" fill="#C0C0C0" >
                     <path d="M15.45,7L14,5.551V2c0-0.55-0.45-1-1-1h-1c-0.55,0-1,0.45-1,1v0.553L9,0.555C8.727,0.297,8.477,0,8,0S7.273,0.297,7,0.555
                         L0.55,7C0.238,7.325,0,7.562,0,8c0,0.563,0.432,1,1,1h1v6c0,0.55,0.45,1,1,1h3v-5c0-0.55,0.45-1,1-1h2c0.55,0,1,0.45,1,1v5h3  
                         c0.55,0,1-0.45,1-1V9h1c0.568,0,1-0.437,1-1C16,7.562,15.762,7.325,15.45,7z"/>
@@ -37,12 +37,39 @@
                 </ul>
             </nav>    
         </header>
-
         <div id="screen-size-counter">
             <p>Page size in pixels :</p>
             <p>Width : <span id="width-counter"></span></p>
             <p>Height : <span id="height-counter"></span></p>
         </div>
+        <main>
+            <section class="rock-paper-scissors">
+                <div class="rules">
+                    <img src="/460px-Rock-paper-scissors_fr.svg-1-300x28.png" alt="">
+                </div>
+                <div class="choice">
+                  <div class="text">
+                    <p>Pick one and go with it !</p>
+                  </div>
+                  <div class="buttons">
+                    <button id="rock" onclick="onClickRps('Rock')" >Rock</button>
+                    <button id="paper" onclick="onClickRps('Paper')">Paper</button>
+                    <button id="scissors" onclick="onClickRps('Scissors')">Scissors</button>
+                  </div>
+                </div>
+                <div class="result">
+                  <p id="user-input"></p>
+                  <p id="result"></p>
+                  <p id="computer-choice"></p>
+                </div>
+                <div class="computer">
+                  <img src="/Meuble_héraldique_Engrenage.svg" alt="Engrenage">
+                </div>
+            </section>
+        </main>
+        <footer>
 
+        </footer>
+        <div class="ghost-window ghost-window-none" id="ghost-window" onclick="navHide()"></div>
     </body>
 </html>
