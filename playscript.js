@@ -19,3 +19,16 @@ function rpsResult(userInput, computerChoice) {
     return "You loose !";
   }
 }
+
+function showRed(id) {
+  let img = document.getElementById(`memory-${id}`)
+  let images = document.querySelectorAll(".memory-game img")
+
+  for (let i = 0; i <= 16; i++) {
+    if (img = images[i]) {
+      document.getElementById(`memory-${id}`).src = "memory-game-red.png";
+    } else {
+      document.querySelectorAll(".memory-game img")[i].src = "memory-game-green.png"
+    }
+  }
+}
