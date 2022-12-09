@@ -55,7 +55,7 @@ function swapElements(arr, i1, i2) {
   // Step 3
   arr[i2] = temp;
 }
-function onLoadRandomPosition() {
+function onLoadRandomPosition() {13
   let randomPosArray = [];
   for (let i = 1; i <= 16; i++) {
     randomPosArray.push(i);
