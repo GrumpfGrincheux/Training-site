@@ -53,4 +53,11 @@ function onClickHideImages() {
     }
   }
 }
-function onLoadRandomPosition() {}
+function onLoadRandomPosition() {
+  for (let i = 1; i <= 16; i++) {
+    document.getElementById(`memory-${i}`).style = `order: ${Math.round(
+      Math.random() * 15 + 1
+    )}`;
+  }
+}
+window.onload = onLoadRandomPosition;
