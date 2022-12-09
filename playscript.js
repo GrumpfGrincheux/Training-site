@@ -53,19 +53,4 @@ function onClickHideImages() {
     }
   }
 }
-
-function onLoadRandomPosition() {
-  let dataImageIds = [],
-    rand;
-  while (dataImageIds.length < 16) {
-    rand = Math.round(Math.random() * 15 + 1);
-    if (dataImageIds.indexOf(rand) === -1) {
-      dataImageIds.push(rand);
-    }
-  }
-  let list = document.querySelectorAll(".image");
-  for (let i = 0; i < list.length; i++) {
-    list[i].setAttribute("data-image-id", dataImageIds[i]);
-  }
-}
-window.onload = onLoadRandomPosition;
+function onLoadRandomPosition() {}
