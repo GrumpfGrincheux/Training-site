@@ -78,32 +78,3 @@ function onLoadRandomPosition() {
   }
 }
 window.onload = onLoadRandomPosition;
-
-/*
-
-function onClickHideImages() {
-  let shownImages = document.querySelectorAll(".img-shown");
-  if (shownImages.length > 2) {
-    if (shownImages[0].classList[0] === shownImages[1].classList[0]) {
-      shownImages[0].classList.remove("img-shown");
-      shownImages[1].classList.remove("img-shown");
-      shownImages[1].classList.remove("img-hidden");
-      shownImages[1].classList.remove("img-hidden");
-      shownImages[0].classList.add("img-valid");
-      shownImages[1].classList.add("img-valid");
-    } else {
-      for (let i = 1; i <= 16; i++) {
-        if (
-          !document.getElementById(`img-${i}`).classList.contains("img-valid")
-        ) {
-          document.getElementById(`img-${i}`).classList.remove("img-shown");
-          document.getElementById(`img-${i}`).classList.add("img-hidden");
-        } else {
-          document.getElementById(`img-${i}`).classList.remove("img-shown");
-        }
-      }
-    }
-  }
-}
-
-*/
