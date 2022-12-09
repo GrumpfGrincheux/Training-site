@@ -70,3 +70,4 @@ function onLoadRandomPosition() {13
   }
 }
 window.onload = onLoadRandomPosition;
+window.onload(console.log("Hello !"))
