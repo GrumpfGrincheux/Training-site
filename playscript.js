@@ -54,10 +54,17 @@ function onClickHideImages() {
   }
 }
 function onLoadRandomPosition() {
-  for (let i = 1; i <= 16; i++) {
-    document.getElementById(`memory-${i}`).style = `order: ${Math.round(
-      Math.random() * 15 + 1
-    )}`;
+  let randomPosArray = [],
+    randomPos;
+  while (randomPosArray.length < 16) {
+    randomPos = Math.round(Math.random() * 15 + 1);
+    if (randomPosArray.indexOf(randomPos) === -1) {
+      randomPosArray.push(randomPos);
+    }
+  }
+  const images = document.querySelectorAll(".image");
+  for (let i = 0; i < images.length; i++) {
+    images[i].setAttribute("style", `order: ${randomPosArray[i]}`);
   }
 }
 window.onload = onLoadRandomPosition;
