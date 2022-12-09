@@ -39,15 +39,7 @@ function onClickHideImages() {
 function onClickValidateImages() {
   let shownImages = document.querySelectorAll(".img-shown");
   let firstImage = shownImages[0];
-  console.log(
-    "🚀 ~ file: playscript.js:54 ~ onClickValidateImages ~ firstImage",
-    firstImage
-  );
   let secondImage = shownImages[1];
-  console.log(
-    "🚀 ~ file: playscript.js:56 ~ onClickValidateImages ~ secondImage",
-    secondImage
-  );
   if (firstImage.classList[0] === secondImage.classList[0]) {
     firstImage.classList.add("img-valid");
     firstImage.classList.remove("img-shown");
