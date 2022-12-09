@@ -1,126 +1,3 @@
-/* html {
-  box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-  font-family: inherit;
-}
- */
-/*        Menu déroulant         */
-
-/* #dropdown {
-  position: fixed;
-  appearance: none;
-}
-#dropdown-menu {
-  color: #F45D05;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  position: fixed;
-  left: 0.5vw;
-  top: 0.5vw;
-  width: 50vw;
-  background-color: rgb(70, 70, 70);
-  z-index: 9;
-  padding: 10px;
-  padding-top: 12vh;
-  border: #d6d6d6 dashed 0.2vw;
-  transform: translateX(-55vw);
-  transition: transform 0.6s ease-in-out;
-}
-#dropdown-menu p {
-  padding: 1vw;
-}
-#dropdown-menu a {
-  color: #F45D05;
-}
-#dropdown:checked ~ #dropdown-menu {
-  transform: translateX(0);
-}
-.ghost-window {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgb(66, 66, 66);
-}
-.ghost-window-none {
-  display: none;
-}
-#home {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 18vw;
-  height: 18vw;
-  margin: 1vw;
-  border: 1vw outset #d6d6d6;
-  border-radius: 10px;
-  box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
-  -webkit-box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
-  -moz-box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
-}
-#dropdown-menu ul {
-  padding: 0px;
-}
-#dropdown-menu ul li {
-  list-style: none;
-}
-.nav-img {
-  height: 18vw;
-  width: 18vw;
-  position: fixed;
-  background-color: rgb(51, 51, 51);
-  padding-top: 0.5vw;
-  padding-bottom: 0.5vw;
-  padding-left: 1.5vw;
-  padding-right: 1.5vw;
-  margin: 1vw;
-  border: 1vw outset #d6d6d6;
-  border-radius: 10px;
-  box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
-  -webkit-box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
-  -moz-box-shadow: -8px 6px 9px 1px rgba(0,0,0,0.29);
-  z-index: 10;
-}
-.nav-img:hover {
-  background-color: rgb(71, 71, 71);
-  cursor: pointer;
-} */
-
-/*              Compteur de pixels               */
-
-/* #screen-size-counter {
-  border: solid black 1px;
-  position: absolute;
-  top: 1vw;
-  right: 1vw;
-  width: auto;
-  height: auto;
-  border: 0.5vw outset #d6d6d6;
-  border-radius: 1vw;
-  box-shadow: 6px 6px 9px 1px rgba(0,0,0,0.29);
-  -webkit-box-shadow: 6px 6px 9px 1px rgba(0,0,0,0.29);
-  -moz-box-shadow: 6px 6px 9px 1px rgba(0,0,0,0.29);
-  background-color: rgb(51, 51, 51);
-  color: #d6d6d6;
-}
-#screen-size-counter p, #screen-size-counter span{
-  margin-left: 1vw;
-  margin-right: 1vw;
-  padding: 0.3vw;
-  margin-top: 0.5vw;
-  margin-bottom: 0.5vw;
-  font-weight: 600;
-  font-size: 1.5rem;
-  text-shadow: 2px 2px px rgba(0,0,0,0.6);
-}
- */
-/* Document */
-
 main {
   position: relative;
   top: 25vh;
@@ -170,3 +47,90 @@ main {
   grid-row: 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
 }
+
+/* .memory-game table,tbody,tr,th,td {
+margin: 5px;
+}
+ */
+
+ .memory-game {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  width: fit-content;
+  height: fit-content;
+ }
+ .image {
+  margin: 1px;
+  width: 150px;
+  height: 150px;
+ }
+ .image-hidden {
+  background-color: green;
+ }
+ .image-shown {
+  background-color: brown;
+ }
+ .img-hidden {
+  opacity: 0;
+ }
+ .img-shown {
+  opacity: 1;
+ }
+
+ 
+ 
+
+.image > div {
+  width: 100%;
+  height: 100%;
+}
+
+[data-image-id='1']>div {
+  background-image: url("memory-game-smiley.png");
+ }
+ [data-image-id='2']>div {
+  background-image: url("memory-game-smiley.png");
+ }
+ [data-image-id='3']>div {
+  background-image: url("memory-game-house.png");
+ }
+ [data-image-id='4']>div {
+  background-image: url("memory-game-house.png");
+ }
+ [data-image-id='5']>div {
+  background-image: url("memory-game-car.png");
+ }
+ [data-image-id='6']>div {
+  background-image: url("memory-game-car.png");
+ }
+ [data-image-id='7']>div {
+  background-image: url("memory-game-tree.png");
+ }
+ [data-image-id='8']>div {
+  background-image: url("memory-game-tree.png");
+ }
+ [data-image-id='9']>div {
+  background-image: url("memory-game-apple.png");
+ }
+ [data-image-id='10']>div {
+  background-image: url("memory-game-apple.png");
+ }
+ [data-image-id='11']>div {
+  background-image: url("memory-game-cat.png");
+ }
+ [data-image-id='12']>div {
+  background-image: url("memory-game-cat.png");
+ }
+ [data-image-id='13']>div {
+  background-image: url("memory-game-flower.png");
+ }
+ [data-image-id='14']>div {
+  background-image: url("memory-game-flower.png");
+ }
+ [data-image-id='15']>div {
+  background-image: url("memory-game-plate.png");
+ }
+ [data-image-id='16']>div {
+  background-image: url("memory-game-plate.png");
+ }

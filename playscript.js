@@ -19,3 +19,53 @@ function rpsResult(userInput, computerChoice) {
     return "You loose !";
   }
 }
+
+/* function showRed(id) {
+  let img = document.getElementById(`memory-${id}`)
+  let images = document.querySelectorAll(".memory-game img")
+
+  for (let i = 0; i <= 16; i++) {
+    if (img = images[i]) {
+      document.getElementById(`memory-${id}`).src = "memory-game-red.png";
+    } else {
+      document.querySelectorAll(".memory-game img")[i].src = "memory-game-green.png"
+    }
+  }
+} */
+
+function onClickShowImage(id) {
+  let image = document.getElementById(`memory-${id}`);
+  image.classList.remove("image-hidden");
+  image.classList.add("image-shown");
+  let img = document.getElementById(`img-${id}`);
+  img.classList.remove("img-hidden");
+  img.classList.add("img-shown");
+  onClickHideImages();
+}
+function onClickHideImages() {
+  if (document.querySelectorAll(".image-shown").length > 2) {
+    for (let i = 1; i <= 16; i++) {
+      document.getElementById(`memory-${i}`).classList.remove("image-shown");
+      document.getElementById(`memory-${i}`).classList.add("image-hidden");
+
+      document.getElementById(`img-${i}`).classList.remove("img-shown");
+      document.getElementById(`img-${i}`).classList.add("img-hidden");
+    }
+  }
+}
+
+function onLoadRandomPosition() {
+  let dataImageIds = [],
+    rand;
+  while (dataImageIds.length < 16) {
+    rand = Math.round(Math.random() * 15 + 1);
+    if (dataImageIds.indexOf(rand) === -1) {
+      dataImageIds.push(rand);
+    }
+  }
+  let list = document.querySelectorAll(".image");
+  for (let i = 0; i < list.length; i++) {
+    list[i].setAttribute("data-image-id", dataImageIds[i]);
+  }
+}
+window.onload = onLoadRandomPosition;
