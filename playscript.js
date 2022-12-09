@@ -20,35 +20,20 @@ function rpsResult(userInput, computerChoice) {
   }
 }
 
-/* function showRed(id) {
-  let img = document.getElementById(`memory-${id}`)
-  let images = document.querySelectorAll(".memory-game img")
-
-  for (let i = 0; i <= 16; i++) {
-    if (img = images[i]) {
-      document.getElementById(`memory-${id}`).src = "memory-game-red.png";
-    } else {
-      document.querySelectorAll(".memory-game img")[i].src = "memory-game-green.png"
-    }
-  }
-} */
-
 function onClickShowImage(id) {
   const img = document.getElementById(`img-${id}`);
   img.classList.remove("img-hidden");
   img.classList.add("img-shown");
-  if (document.querySelectorAll(".img-shown").length == 2) {
-    onClickValidateImages();
-  }
-  if (document.querySelectorAll(".img-shown").length > 2) {
-    onClickHideImages();
-  }
+  onClickValidateImages();
+  onClickHideImages();
 }
 function onClickHideImages() {
   const images = document.querySelectorAll(".img");
-  for (let i = 0; i < images.length; i++) {
-    images[i].classList.remove("img-shown");
-    images[i].classList.add("img-hidden");
+  if (document.querySelectorAll(".img-shown").length > 2) {
+    for (let i = 0; i < images.length; i++) {
+      images[i].classList.remove("img-shown");
+      images[i].classList.add("img-hidden");
+    }
   }
 }
 function onClickValidateImages() {
