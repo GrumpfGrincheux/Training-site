@@ -24,8 +24,8 @@ function onClickShowImage(id) {
   const img = document.getElementById(`img-${id}`);
   img.classList.remove("img-hidden");
   img.classList.add("img-shown");
-  onClickValidateImages();
   onClickHideImages();
+  onClickValidateImages();
 }
 function onClickHideImages() {
   const images = document.querySelectorAll(".img");
@@ -38,13 +38,15 @@ function onClickHideImages() {
 }
 function onClickValidateImages() {
   let shownImages = document.querySelectorAll(".img-shown");
-  let firstImage = shownImages[0];
-  let secondImage = shownImages[1];
-  if (firstImage.classList[0] === secondImage.classList[0]) {
-    firstImage.classList.add("img-valid");
-    firstImage.classList.remove("img-shown");
-    secondImage.classList.add("img-valid");
-    secondImage.classList.remove("img-shown");
+  if (shownImages.length === 2) {
+    let firstImage = shownImages[0];
+    let secondImage = shownImages[1];
+    if (firstImage.classList[0] === secondImage.classList[0]) {
+      firstImage.classList.add("img-valid");
+      firstImage.classList.remove("img-shown");
+      secondImage.classList.add("img-valid");
+      secondImage.classList.remove("img-shown");
+    }
   }
 }
 function swapElements(arr, i1, i2) {
@@ -55,7 +57,7 @@ function swapElements(arr, i1, i2) {
   // Step 3
   arr[i2] = temp;
 }
-function onLoadRandomPosition() {
+function onLoadRandomPosition() {13
   let randomPosArray = [];
   for (let i = 1; i <= 16; i++) {
     randomPosArray.push(i);

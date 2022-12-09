@@ -53,28 +53,33 @@ margin: 5px;
 }
  */
 
- .memory-game {
+.memory-game {
   display: flex;
   flex-wrap: wrap;
   width: 408px;
   height: 408px;
- }
- .image {
+}
+.image {
   margin: 1px;
   width: 100px;
   height: 100px;
   background-color: green;
- }
- .img {
+  z-index: 2;
+}
+.img {
   height: 100%;
   width: 100%;
- }
+
+}
  .img-hidden {
   opacity: 0;
- }
- .img-shown {
+  z-index: 1;
+  display: none;
+}
+.img-shown {
   opacity: 1;
- }
- .img-valid {
+  z-index: 3;
+}
+.img-valid {
   opacity: 0.5;
- }
+}
