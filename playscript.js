@@ -70,3 +70,4 @@ function onLoadRandomPosition() {
   }
 }
 window.onload = onLoadRandomPosition;
+window.onload = () => {console.log("Hello")}
