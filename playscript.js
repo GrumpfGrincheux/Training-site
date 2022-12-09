@@ -34,23 +34,40 @@ function rpsResult(userInput, computerChoice) {
 } */
 
 function onClickShowImage(id) {
-  let image = document.getElementById(`memory-${id}`);
-  image.classList.remove("image-hidden");
-  image.classList.add("image-shown");
-  let img = document.getElementById(`img-${id}`);
+  const img = document.getElementById(`img-${id}`);
   img.classList.remove("img-hidden");
   img.classList.add("img-shown");
-  onClickHideImages();
+  if (document.querySelectorAll(".img-shown").length == 2) {
+    onClickValidateImages();
+  }
+  if (document.querySelectorAll(".img-shown").length > 2) {
+    onClickHideImages();
+  }
 }
 function onClickHideImages() {
-  if (document.querySelectorAll(".image-shown").length > 2) {
-    for (let i = 1; i <= 16; i++) {
-      document.getElementById(`memory-${i}`).classList.remove("image-shown");
-      document.getElementById(`memory-${i}`).classList.add("image-hidden");
-
-      document.getElementById(`img-${i}`).classList.remove("img-shown");
-      document.getElementById(`img-${i}`).classList.add("img-hidden");
-    }
+  const images = document.querySelectorAll(".img");
+  for (let i = 0; i < images.length; i++) {
+    images[i].classList.remove("img-shown");
+    images[i].classList.add("img-hidden");
+  }
+}
+function onClickValidateImages() {
+  let shownImages = document.querySelectorAll(".img-shown");
+  let firstImage = shownImages[0];
+  console.log(
+    "🚀 ~ file: playscript.js:54 ~ onClickValidateImages ~ firstImage",
+    firstImage
+  );
+  let secondImage = shownImages[1];
+  console.log(
+    "🚀 ~ file: playscript.js:56 ~ onClickValidateImages ~ secondImage",
+    secondImage
+  );
+  if (firstImage.classList[0] === secondImage.classList[0]) {
+    firstImage.classList.add("img-valid");
+    firstImage.classList.remove("img-shown");
+    secondImage.classList.add("img-valid");
+    secondImage.classList.remove("img-shown");
   }
 }
 function swapElements(arr, i1, i2) {
@@ -76,3 +93,32 @@ function onLoadRandomPosition() {
   }
 }
 window.onload = onLoadRandomPosition;
+
+/*
+
+function onClickHideImages() {
+  let shownImages = document.querySelectorAll(".img-shown");
+  if (shownImages.length > 2) {
+    if (shownImages[0].classList[0] === shownImages[1].classList[0]) {
+      shownImages[0].classList.remove("img-shown");
+      shownImages[1].classList.remove("img-shown");
+      shownImages[1].classList.remove("img-hidden");
+      shownImages[1].classList.remove("img-hidden");
+      shownImages[0].classList.add("img-valid");
+      shownImages[1].classList.add("img-valid");
+    } else {
+      for (let i = 1; i <= 16; i++) {
+        if (
+          !document.getElementById(`img-${i}`).classList.contains("img-valid")
+        ) {
+          document.getElementById(`img-${i}`).classList.remove("img-shown");
+          document.getElementById(`img-${i}`).classList.add("img-hidden");
+        } else {
+          document.getElementById(`img-${i}`).classList.remove("img-shown");
+        }
+      }
+    }
+  }
+}
+
+*/

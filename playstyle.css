@@ -56,23 +56,25 @@ margin: 5px;
  .memory-game {
   display: flex;
   flex-wrap: wrap;
-  width: 608px;
-  height: 608px;
+  width: 408px;
+  height: 408px;
  }
  .image {
   margin: 1px;
-  width: 150px;
-  height: 150px;
- }
- .image-hidden {
+  width: 100px;
+  height: 100px;
   background-color: green;
  }
- .image-shown {
-  background-color: brown;
+ .img {
+  height: 100%;
+  width: 100%;
  }
  .img-hidden {
   opacity: 0;
  }
  .img-shown {
   opacity: 1;
+ }
+ .img-valid {
+  opacity: 0.5;
  }
