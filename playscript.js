@@ -53,14 +53,22 @@ function onClickHideImages() {
     }
   }
 }
+function swapElements(arr, i1, i2) {
+  // Step 1
+  let temp = arr[i1];
+  // Step 2
+  arr[i1] = arr[i2];
+  // Step 3
+  arr[i2] = temp;
+}
 function onLoadRandomPosition() {
-  let randomPosArray = [],
-    randomPos;
-  while (randomPosArray.length < 16) {
-    randomPos = Math.round(Math.random() * 15 + 1);
-    if (randomPosArray.indexOf(randomPos) === -1) {
-      randomPosArray.push(randomPos);
-    }
+  let randomPosArray = [];
+  for (let i = 1; i <= 16; i++) {
+    randomPosArray.push(i);
+  }
+  let numSwap = 0;
+  while (++numSwap < randomPosArray.length) {
+    swapElements(randomPosArray, 0, Math.round(Math.random() * 15));
   }
   const images = document.querySelectorAll(".image");
   for (let i = 0; i < images.length; i++) {
