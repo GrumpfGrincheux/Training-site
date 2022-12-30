@@ -1,8 +1,8 @@
 <html>
     <body>
         <head>
-            <link rel="stylesheet" href="playstyle.css"/>
             <link rel="stylesheet" href="global.css">
+            <link rel="stylesheet" href="playstyle.css"/>
             <script src="global.js" defer></script>
             <script src="playscript.js" defer></script>
             <noscript>Pour utiliser ce site, merci d'activer JavaScript.</noscript>
@@ -66,6 +66,85 @@
                 </div>
                 <div class="computer">
                   <img src="engrenage.svg" alt="Engrenage">
+                </div>
+            </section>
+            <section class="memory-game" onclick="onClickHideImages()">
+<!--                 <table>
+                    <tbody>
+                        <tr>
+                            <td><img onclick="showRed(1)" id="memory-1" src="memory-game-green.png" alt="placeholder"></td>
+                            <td><img onclick="showRed(2)" id="memory-2" src="memory-game-green.png" alt="placeholder"></td>
+                            <td><img onclick="showRed(3)" id="memory-3" src="memory-game-green.png" alt="placeholder"></td>
+                            <td><img onclick="showRed(4)" id="memory-4" src="memory-game-green.png" alt="placeholder"></td>
+                        </tr>
+                        <tr>
+                            <td><img onclick="showRed(5)" id="memory-5" src="memory-game-green.png" alt="placeholder"></td>
+                            <td><img onclick="showRed(6)" id="memory-6" src="memory-game-green.png" alt="placeholder"></td>
+                            <td><img onclick="showRed(7)" id="memory-7" src="memory-game-green.png" alt="placeholder"></td>
+                            <td><img onclick="showRed(8)" id="memory-8" src="memory-game-green.png" alt="placeholder"></td>
+                        </tr>
+                        <tr>
+                            <td><img onclick="showRed(9)" id="memory-9" src="memory-game-green.png" alt="placeholder"></td>
+                            <td><img onclick="showRed(10)" id="memory-10" src="memory-game-green.png" alt="placeholder"></td>
+                            <td><img onclick="showRed(11)" id="memory-11" src="memory-game-green.png" alt="placeholder"></td>
+                            <td><img onclick="showRed(12)" id="memory-12" src="memory-game-green.png" alt="placeholder"></td>
+                        </tr>
+                        <tr>
+                            <td><img onclick="showRed(13)" id="memory-13" src="memory-game-green.png" alt="placeholder"></td>
+                            <td><img onclick="showRed(14)" id="memory-14" src="memory-game-green.png" alt="placeholder"></td>
+                            <td><img onclick="showRed(15)" id="memory-15" src="memory-game-green.png" alt="placeholder"></td>
+                            <td><img onclick="showRed(16)" id="memory-16" src="memory-game-green.png" alt="placeholder"></td>
+                        </tr>
+                    </tbody>
+                </table>
+ -->            
+                <div class="image" id="memory-1" onclick="onClickShowImage(1)">
+                    <img onclick="onClickHideImages()" class="smiley img img-hidden" src="memory-game-smiley.png" id="img-1" alt="">
+                </div>
+                <div class="image" id="memory-2" onclick="onClickShowImage(2)">
+                    <img onclick="onClickHideImages()" class="smiley img img-hidden" src="memory-game-smiley.png" id="img-2" alt="">
+                </div>
+                <div class="image" id="memory-3" onclick="onClickShowImage(3)">
+                    <img onclick="onClickHideImages()" class="car img img-hidden" src="memory-game-car.png" id="img-3" alt="">
+                </div>
+                <div class="image" id="memory-4" onclick="onClickShowImage(4)">
+                    <img onclick="onClickHideImages()" class="car img img-hidden" src="memory-game-car.png" id="img-4" alt="">
+                </div>
+                <div class="image" id="memory-5" onclick="onClickShowImage(5)">
+                    <img onclick="onClickHideImages()" class="house img img-hidden" src="memory-game-house.png" id="img-5" alt="">
+                </div>
+                <div class="image" id="memory-6" onclick="onClickShowImage(6)">
+                    <img onclick="onClickHideImages()" class="house img img-hidden" src="memory-game-house.png" id="img-6" alt="">
+                </div>
+                <div class="image" id="memory-7" onclick="onClickShowImage(7)">
+                    <img onclick="onClickHideImages()" class="flower img img-hidden" src="memory-game-flower.png" id="img-7" alt="">
+                </div>
+                <div class="image" id="memory-8" onclick="onClickShowImage(8)">
+                    <img onclick="onClickHideImages()" class="flower img img-hidden" src="memory-game-flower.png" id="img-8" alt="">
+                </div>
+                <div class="image" id="memory-9" onclick="onClickShowImage(9)">
+                    <img onclick="onClickHideImages()" class="tree img img-hidden" src="memory-game-tree.png" id="img-9" alt="">
+                </div>
+                <div class="image" id="memory-10" onclick="onClickShowImage(10)">
+                    <img onclick="onClickHideImages()" class="tree img img-hidden" src="memory-game-tree.png" id="img-10" alt="">
+                </div>
+                <div class="image" id="memory-11" onclick="onClickShowImage(11)">
+                    <img onclick="onClickHideImages()" class="apple img img-hidden" src="memory-game-apple.png" id="img-11" alt="">
+                </div>
+                <div class="image" id="memory-12" onclick="onClickShowImage(12)">
+                    <img onclick="onClickHideImages()" class="apple img img-hidden" src="memory-game-apple.png" id="img-12" alt="">
+                </div>
+                <div class="image" id="memory-13" onclick="onClickShowImage(13)">
+                    <img onclick="onClickHideImages()" class="plate img img-hidden" src="memory-game-plate.png" id="img-13" alt="">
+                </div>
+                <div class="image" id="memory-14" onclick="onClickShowImage(14)">
+                    <img onclick="onClickHideImages()" class="plate img img-hidden" src="memory-game-plate.png" id="img-14" alt="">
+                </div>
+                <div class="image" id="memory-15" onclick="onClickShowImage(15)">
+                    <img onclick="onClickHideImages()" class="cat img img-hidden" src="memory-game-cat.png" id="img-15" alt="">
+                </div>
+                <div class="image" id="memory-16" onclick="onClickShowImage(16)">
+                    <img onclick="onClickHideImages()" class="cat img img-hidden" src="memory-game-cat.png" id="img-16" alt="">
                 </div>
             </section>
         </main>

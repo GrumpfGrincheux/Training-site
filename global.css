@@ -49,7 +49,7 @@ html {
   top: 0px;
   left: 0px;
   background-color: rgb(66, 66, 66);
-  opacity: 0.4;
+  opacity: 0;
 }
 .ghost-window-none {
   display: none;
